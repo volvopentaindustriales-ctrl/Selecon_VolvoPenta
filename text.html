@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - SELECON Volvo Penta Industrial</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    body {
+      background-color: #F8FAFC;
+      color: #1E293B;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: #002B49;
+      color: #FFFFFF;
+      padding: 15px 10px;
+      text-align: center;
+    }
+
+    .logo-box {
+      background-color: #FFFFFF;
+      border-radius: 6px;
+      width: 140px;
+      height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 8px;
+      box-sizing: border-box;
+    }
+
+    .brand-table img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-divider {
+      color: #FFFFFF;
+      font-size: 22px;
+      font-weight: 300;
+      padding: 0 10px;
+    }
+
+    nav {
+      margin-top: 12px;
+    }
+
+    nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      margin: 0 6px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      color: #38BDF8;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .card {
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      color: #002B49;
+      margin-top: 0;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #CBD5E1;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .btn {
+      background-color: #002B49;
+      color: #FFFFFF;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .btn-gps {
+      background-color: #16A34A;
+      margin-top: 15px;
+    }
+
+    .map-box {
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: #002B49;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <table class="brand-table" align="center" cellpadding="0" cellspacing="0" style="margin: 0 auto; border: none;">
+      <tr>
+        <td align="center" style="vertical-align: middle;">
+          <div class="logo-box">
+            <img src="foto.jpg" alt="foto 1">
+          </div>
+        </td>
+        <td class="brand-divider" align="center" style="vertical-align: middle;">|</td>
+        <td align="center" style="vertical-align: middle;">
+          <div class="logo-box">
+            <img src="foto2.png" alt="foto 2">
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <nav>
+      <a href="Index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="vodia.html">VODIA</a>
+      <a href="accesorios.html">Accesorios</a>
+      <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Nuestra Ubicación</h2>
+      <p><strong>SELECON - Volvo Penta Sevilla</strong></p>
+      <p>Servicio Técnico Oficial Volvo Penta Industrial</p>
+      <p>Polígono Industrial Macarena, C/ Química 19</p>
+      <p>41015 Sevilla, España</p>
+      <p><strong>Horario:</strong> Lunes a Viernes de 8:00 a 19:00 h</p>
+      <p><strong>Email:</strong> volvopentaindustrial@selecon.es</p>
+
+      <a href="https://maps.app.goo.gl/gvESUcJ5GBTFQbCX7" target="_blank" class="btn btn-gps">
+        📍 Abrir en Google Maps / Iniciar Ruta GPS
+      </a>
+    </div>
+
+    <div class="card">
+      <form id="contactForm">
+        <h3>Envíenos su consulta</h3>
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="tel" id="telefono" placeholder="Teléfono de contacto">
+        <textarea id="mensaje" rows="4" placeholder="Detalles de la consulta..." required></textarea>
+        <button type="submit" class="btn">Enviar Mensaje</button>
+        <p id="formStatus" style="display:none; font-weight:bold; margin-top:10px;"></p>
+      </form>
+    </div>
+
+    <div class="map-box">
+      <h3>Plano de Localización</h3>
+      <iframe src="https://maps.google.com/maps?q=Calle%20Quimica%2019%20Sevilla&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const SUPABASE_URL = 'https://TU_PROYECTO.supabase.co';
+    const SUPABASE_ANON_KEY = 'TU_SUPABASE_ANON_KEY';
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.style.display = 'block';
+      status.innerText = 'Enviando...';
+
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const telefono = document.getElementById('telefono').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      const { error } = await supabase.from('contactos').insert([{ nombre, email, telefono, mensaje }]);
+
+      if (error) {
+        status.style.color = 'red';
+        status.innerText = 'Error al enviar el mensaje.';
+      } else {
+        status.style.color = 'green';
+        status.innerText = '¡Mensaje enviado con éxito!';
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios Industriales - SELECON Volvo Penta Sevilla</title>
+  <style>
+    :root { --primary: #002B49; --accent: #D71920; --bg: #F8FAFC; --text: #1E293B; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+    header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: #38BDF8; font-weight: bold; }
+
+    .container { max-width: 1100px; margin: 3rem auto; padding: 0 1rem; }
+    .page-title { text-align: center; color: var(--primary); margin-bottom: 2rem; }
+
+    .service-detail { background: white; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center; }
+    .service-detail img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
+    .service-detail h2 { color: var(--primary); margin-bottom: 0.8rem; }
+    .service-detail ul { margin-left: 1.2rem; margin-top: 0.5rem; }
+
+    .cta-box { background: var(--primary); color: white; border-radius: 12px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
+    .btn { background: var(--accent); color: white; padding: 0.8rem 1.6rem; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; margin-top: 1rem; }
+    .btn-sec { background: #0284C7; color: white; padding: 0.8rem 1.6rem; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; margin-top: 1rem; margin-left: 0.5rem; }
+
+    footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>SELECON | Volvo Penta Industrial</h2>
+    <nav>
+      <a href="Index.html">Inicio</a>
+      <a href="servicios.html" class="active">Servicios</a>
+      <a href="vodia.html">VODIA</a>
+      <a href="accesorios.html">Accesorios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Servicios para Motores e Instalaciones Industriales</h1>
+
+    <!-- Sección Generación de Energía -->
+    <div class="service-detail">
+      <div>
+        <h2>Generación de Energía (Power Generation)</h2>
+        <p>Servicio técnico para motores diésel en grupos electrógenos y sistemas de energía continua o de emergencia.</p>
+        <ul>
+          <li>Mantenimiento preventivo periódico en instalaciones.</li>
+          <li>Reparación de sistemas de inyección, turbos y refrigeración.</li>
+        </ul>
+        <br>
+        <a href="https://www.volvopenta.com/industrial/power-generation/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: bold;">
+          Sección Oficial: Generación de Energía &nearr;
+        </a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Generación de Energía">
+    </div>
+
+    <!-- Sección Off-Road -->
+    <div class="service-detail">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Maquinaria Industrial Off-Road">
+      <div>
+        <h2>Maquinaria Industrial (Off-Road)</h2>
+        <p>Asistencia técnica para equipos de construcción, minería, motobombas y maquinaria móvil.</p>
+        <ul>
+          <li>Diagnóstico en taller o en campo.</li>
+          <li>Reconstrucción y ajuste según normativas de emisiones.</li>
+        </ul>
+        <br>
+        <a href="https://www.volvopenta.com/industrial/industrial-engines/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: bold;">
+          Sección Oficial: Catálogo Off-Road &nearr;
+        </a>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h2>¿Necesita asistencia para su motor industrial?</h2>
+      <p>Contacte con nuestro centro de servicio técnico local en Sevilla o visite el portal oficial.</p>
+      <a href="contacto.html" class="btn">Solicitar Presupuesto</a>
+      <a href="https://www.volvopenta.com/es-es/" target="_blank" rel="noopener noreferrer" class="btn-sec">Soporte Técnico Oficial &nearr;</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

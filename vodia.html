@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VODIA & Diagnóstico - SELECON Volvo Penta</title>
+  <style>
+    :root { --primary: #002B49; --accent: #D71920; --bg: #F8FAFC; --text: #1E293B; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+    header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
+    nav a.active { color: #38BDF8; font-weight: bold; }
+
+    .container { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
+    .hero-box { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 2rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card { background: white; border-radius: 12px; padding: 1.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .alert-box { background: #E0F2FE; border-left: 4px solid #0284C7; padding: 1.5rem; border-radius: 6px; margin-top: 2rem; }
+
+    footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>SELECON | Volvo Penta Industrial</h2>
+    <nav>
+      <a href="Index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="vodia.html" class="active">VODIA</a>
+      <a href="accesorios.html">Accesorios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="hero-box">
+      <h1 style="color: var(--primary); margin-bottom: 1rem;">Diagnóstico Electrónico VODIA</h1>
+      <p>Utilizamos el sistema oficial <strong>VODIA (Volvo Penta Diagnostic Tool)</strong> para la comprobación, lectura de códigos de error y parametrización de unidades de control (ECU).</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="color: var(--primary);">Pruebas en Tiempo Real</h3>
+        <p>Análisis del rendimiento de sensores, inyectores y presiones de trabajo según especificaciones de fábrica.</p>
+      </div>
+
+      <div class="card">
+        <h3 style="color: var(--primary);">Documentación Técnica</h3>
+        <p>Soporte basado en la documentación y esquemas eléctricos actualizados por la red Volvo Penta.</p>
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <h3>Soporte y Asistencia Global</h3>
+      <p>Consulte las opciones de servicio global y asistencia en el sitio oficial de Volvo Penta España.</p>
+      <br>
+      <a href="https://www.volvopenta.com/es-es/" target="_blank" rel="noopener noreferrer" style="color: #0284C7; font-weight: bold;">
+        Portal Oficial Volvo Penta España &nearr;
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
