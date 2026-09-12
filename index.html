@@ -3,107 +3,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SELECON - Servicio Oficial Volvo Penta Industrial Sevilla</title>
+  <title>Contacto - SELECON Volvo Penta Industrial</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <style>
-    :root { --primary: #002B49; --accent: #D71920; --bg: #F8FAFC; --text: #1E293B; }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-    
-    header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.2s; }
-    nav a:hover, nav a.active { color: #38BDF8; font-weight: bold; }
+    body {
+      background-color: #F8FAFC;
+      color: #1E293B;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
 
-    .hero { background: linear-gradient(rgba(0,43,73,0.85), rgba(0,43,73,0.85)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80') center/cover; color: white; padding: 6rem 2rem; text-align: center; }
-    .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem auto; opacity: 0.9; }
-    
-    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn { background: var(--accent); color: white; padding: 0.8rem 1.6rem; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; }
-    .btn-outline { background: transparent; border: 2px solid white; color: white; padding: 0.8rem 1.6rem; text-decoration: none; border-radius: 6px; font-weight: bold; }
-    .btn-outline:hover { background: white; color: var(--primary); }
+    header {
+      background-color: #002B49;
+      color: #FFFFFF;
+      padding: 15px 10px;
+      text-align: center;
+    }
 
-    .container { max-width: 1100px; margin: 3rem auto; padding: 0 1rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    
-    .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s; }
-    .card:hover { transform: translateY(-4px); }
-    .card img { width: 100%; height: 200px; object-fit: cover; }
-    .card-body { padding: 1.5rem; }
-    .card-body h3 { color: var(--primary); margin-bottom: 0.5rem; }
-    .card-body a { color: var(--primary); font-weight: bold; text-decoration: none; display: inline-block; margin-top: 1rem; }
+    /* RECUADRO RECTANGULAR BLANCO PARA ENMARCAR CADA LOGOTIPO */
+    .logo-box {
+      background-color: #FFFFFF;
+      border-radius: 6px;
+      width: 140px;
+      height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 8px;
+      box-sizing: border-box;
+    }
 
-    .official-banner { background: #E0F2FE; border: 1px solid #BAE6FD; border-radius: 12px; padding: 2rem; margin-top: 3rem; text-align: center; }
-    .official-banner h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    /* LA IMAGEN SE ACOPLA DENTRO DEL RECUADRO SIN SALIRSE */
+    .brand-table img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
-    footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+    .brand-divider {
+      color: #FFFFFF;
+      font-size: 22px;
+      font-weight: 300;
+      padding: 0 10px;
+    }
+
+    nav {
+      margin-top: 12px;
+    }
+
+    nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      margin: 0 6px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      color: #38BDF8;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .card {
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      color: #002B49;
+      margin-top: 0;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #CBD5E1;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .btn {
+      background-color: #002B49;
+      color: #FFFFFF;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+
+    .btn-gps {
+      background-color: #16A34A;
+      margin-top: 15px;
+    }
+
+    .map-box {
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: #002B49;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- HEADER CON MENÚ 100% INTERNO -->
   <header>
-    <h2>SELECON | Volvo Penta Industrial</h2>
+    <table class="brand-table" align="center" cellpadding="0" cellspacing="0" style="margin: 0 auto; border: none;">
+      <tr>
+        <td align="center" style="vertical-align: middle;">
+          <div class="logo-box">
+            <!-- <img src="https://i.ibb.co/0VRVnbhj/selecon.png" alt="selecon"> -->
+            <img src="selecon.jpg" alt="selecon">
+          </div>
+        </td>
+        <td class="brand-divider" align="center" style="vertical-align: middle;">|</td>
+        <td align="center" style="vertical-align: middle;">
+          <div class="logo-box">
+            <!-- <img src="https://i.ibb.co/V0kNW5hL/volvop1.jpg" alt="volvop1"> -->
+            <img src="volvop1.jpg" alt="volvop1">
+          </div>
+        </td>
+      </tr>
+    </table>
+
     <nav>
-      <a href="Index.html" class="active">Inicio</a>
+      <a href="Index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="vodia.html">VODIA</a>
       <a href="accesorios.html">Accesorios</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="contacto.html" class="active">Contacto</a>
     </nav>
-  </header> 
+  </header>
 
-  <section class="hero">
-    <h1>Servicio Técnico Volvo Penta Industrial en Sevilla</h1>
-    <p>Especialistas en mantenimiento, reparación de motores industriales, grupos electrógenos y recambios originales en Sevilla.</p>
-    <div class="btn-group">
-      <a href="contacto.html" class="btn">Solicitar Asistencia Local</a>
-      <a href="servicios.html" class="btn-outline">Ver Nuestros Servicios</a>
-    </div>
-  </section>
+  <div class="container">
+    <div class="card">
+      <h2>Nuestra Ubicación</h2>
+      <p><strong>SELECON - Volvo Penta Sevilla</strong></p>
+      <p>Servicio Técnico Oficial Volvo Penta Industrial</p>
+      <p>Polígono Industrial Macarena, C/ Química 19</p>
+      <p>41015 Sevilla, España</p>
+      <p><strong>Horario:</strong> Lunes a Viernes de 8:00 a 19:00 h</p>
+      <p><strong>Email:</strong> volvopentaindustrial@selecon.es</p>
 
-  <main class="container">
-    <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Especialidades Industriales</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Motores Industriales">
-        <div class="card-body">
-          <h3>Reparación de Motores</h3>
-          <p>Mantenimiento preventivo y correctivo especializado para motores diésel industriales y de generación de energía.</p>
-          <a href="servicios.html">Ver servicios locales &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Diagnóstico VODIA">
-        <div class="card-body">
-          <h3>Diagnóstico VODIA</h3>
-          <p>Diagnóstico electrónico oficial con la herramienta VODIA para la detección rápida de fallos y parametrización ECU.</p>
-          <a href="vodia.html">Saber más &rarr;</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80" alt="Accesorios y Repuestos">
-        <div class="card-body">
-          <h3>Accesorios y Recambios</h3>
-          <p>Suministro de componentes, filtros y recambios 100% originales con garantía oficial de fábrica.</p>
-          <a href="accesorios.html">Consultar inventario &rarr;</a>
-        </div>
-      </div>
+      <a href="https://maps.app.goo.gl/gvESUcJ5GBTFQbCX7" target="_blank" class="btn btn-gps">
+        📍 Abrir en Google Maps / Iniciar Ruta GPS
+      </a>
     </div>
 
-    <!-- BANNER DE ENLACE EXTERNO OPCIONAL AL FINAL DE LA PÁGINA -->
-    <div class="official-banner">
-      <h3>Web Oficial de Volvo Penta España</h3>
-      <p>Para consultar catálogos globales y fichas técnicas internacionales de la marca.</p>
-      <br>
-      <a href="https://www.volvopenta.com/es-es/industrial/" target="_blank" rel="noopener noreferrer" class="btn">Visitar Sitio Oficial &nearr;</a>
+    <div class="card">
+      <form id="contactForm">
+        <h3>Envíenos su consulta</h3>
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="tel" id="telefono" placeholder="Teléfono de contacto">
+        <textarea id="mensaje" rows="4" placeholder="Detalles de la consulta..." required></textarea>
+        <button type="submit" class="btn">Enviar Mensaje</button>
+        <p id="formStatus" style="display:none; font-weight:bold; margin-top:10px;"></p>
+      </form>
     </div>
-  </main>
+
+    <div class="map-box">
+      <h3>Plano de Localización</h3>
+      <iframe src="https://maps.google.com/maps?q=Calle%20Quimica%2019%20Sevilla&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    const SUPABASE_URL = 'https://TU_PROYECTO.supabase.co';
+    const SUPABASE_ANON_KEY = 'TU_SUPABASE_ANON_KEY';
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.style.display = 'block';
+      status.innerText = 'Enviando...';
+
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const telefono = document.getElementById('telefono').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      const { error } = await supabase.from('contactos').insert([{ nombre, email, telefono, mensaje }]);
+
+      if (error) {
+        status.style.color = 'red';
+        status.innerText = 'Error al enviar el mensaje.';
+      } else {
+        status.style.color = 'green';
+        status.innerText = '¡Mensaje enviado con éxito!';
+        form.reset();
+      }
+    });
+  </script>
 
 </body>
 </html>
