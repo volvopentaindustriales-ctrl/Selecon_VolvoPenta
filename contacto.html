@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+na<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -72,24 +72,24 @@ class="mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 round
 <span>📍 Abrir en Google Maps / Ruta GPS</span>
 </a>
 </div>
-​<!-- FORMULARIO SUPABASE -->
+​<!-- FORMULARIO SUPABASE + EMAIL -->
 <div class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200">
 <form id="contactForm" class="space-y-4">
 <h2 class="text-xl font-bold text-primary mb-2">Envíenos su Consulta</h2>
 <div>
-<input type="text" id="nombre" placeholder="Nombre completo" required
+<input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required
 class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
 </div>
 <div>
-<input type="email" id="email" placeholder="Correo electrónico" required
+<input type="email" id="email" name="email" placeholder="Correo electrónico" required
 class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
 </div>
 <div>
-<input type="tel" id="telefono" placeholder="Teléfono de contacto"
+<input type="tel" id="telefono" name="telefono" placeholder="Teléfono de contacto"
 class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
 </div>
 <div>
-<textarea id="mensaje" rows="3" placeholder="Detalles de su consulta..." required
+<textarea id="mensaje" name="mensaje" rows="3" placeholder="Detalles de su consulta..." required
 class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none"></textarea>
 </div>
 <button type="submit" id="submitBtn" class="w-full bg-primary hover:bg-primaryLight text-white font-bold py-3 px-4 rounded-lg transition-colors shadow">
@@ -118,7 +118,7 @@ throw new Error("Librería de Supabase no cargada.");
 }
 supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-green-100 text-green-800 border border-green-300';
-status.innerText = '✅ Conectado con Supabase. Listo.';
+status.innerText = '✅ Conectado. Listo para enviar.';
 } catch (err) {
 status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-red-100 text-red-800 border border-red-300';
 status.innerText = '❌ Error de conexión: ' + err.message;
@@ -129,7 +129,7 @@ status.innerText = '❌ Error de conexión: ' + err.message;
 form.addEventListener('submit', async (e) => {
 e.preventDefault();
 ​status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-blue-100 text-blue-800 border border-blue-300';
-status.innerText = '⏳ Guardando mensaje...';
+status.innerText = '⏳ Guardando y enviando correos...';
 ​if (!supabaseClient) {
 status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-amber-100 text-amber-800 border border-amber-300';
 status.innerText = '⚠️ Error: Supabase no está activo';
@@ -140,7 +140,8 @@ const emailVal = document.getElementById('email').value.trim();
 const telefonoVal = document.getElementById('telefono').value.trim();
 const mensajeVal = document.getElementById('mensaje').value.trim();
 ​try {
-const { data, error } = await supabaseClient
+// 1. Guardar en Supabase con minúsculas exactas
+const { error } = await supabaseClient
 .from('Contactos')
 .insert([{
 nombre: nombreVal,
@@ -149,18 +150,33 @@ telefono: telefonoVal,
 mensaje: mensajeVal
 }]);
 ​if (error) {
-console.error("Error de Supabase:", error);
-status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-red-100 text-red-800 border border-red-300';
-status.innerText = '❌ Error: ' + error.message;
-} else {
-status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-green-100 text-green-800 border border-green-300';
-status.innerText = '✅ ¡Mensaje guardado con éxito!';
-form.reset();
+throw error;
 }
-} catch (err) {
-console.error("Excepción:", err);
+​// 2. Enviar notificación por email a ambos correos usando FormSubmit
+// Enviamos a volvopentaindustriales@gmail.com (y cc a volvopentaindustrial@selecon.es)
+await fetch("https://formsubmit.co/ajax/volvopentaindustriales@gmail.com", {
+method: "POST",
+headers: {
+'Content-Type': 'application/json',
+'Accept': 'application/json'
+},
+body: JSON.stringify({
+_subject: "Nuevo mensaje de contacto web - SELECON",
+_cc: "volvopentaindustrial@selecon.es",
+Nombre: nombreVal,
+Email: emailVal,
+Teléfono: telefonoVal,
+Mensaje: mensajeVal
+})
+});
+​status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-green-100 text-green-800 border border-green-300';
+status.innerText = '✅ ¡Guardado en base de datos y correos enviados a ambas cuentas!';
+form.reset();
+​} catch (err) {
+console.error("Error:", err);
 status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-red-100 text-red-800 border border-red-300';
-status.innerText = '❌ Excepción: ' + err.message;
+status.innerText = '❌ Error: ' + (err.message || 'Ocurrió un problema');
+alert("Error: " + (err.message || 'No se pudo completar el envío'));
 }
 });
 }
