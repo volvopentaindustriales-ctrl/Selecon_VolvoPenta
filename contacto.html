@@ -155,7 +155,6 @@
         if (!supabaseClient) {
           status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-amber-100 text-amber-800 border border-amber-300';
           status.innerText = '⚠️ Error: Supabase no está activo';
-          alert('Error: Supabase no está activo.');
           return;
         }
 
@@ -165,7 +164,6 @@
         const mensajeVal = document.getElementById('mensaje').value.trim();
 
         try {
-          // Usamos columnas en minúsculas (nombre, email, telefono, mensaje) que es lo estándar en Supabase
           const { data, error } = await supabaseClient
             .from('Contactos')
             .insert([{ 
@@ -179,18 +177,15 @@
             console.error("Error de Supabase:", error);
             status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-red-100 text-red-800 border border-red-300';
             status.innerText = '❌ Error al guardar: ' + error.message;
-            alert('Error al guardar: ' + error.message);
           } else {
             status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-green-100 text-green-800 border border-green-300';
             status.innerText = '✅ ¡Mensaje guardado con éxito!';
-            alert('¡Mensaje enviado y guardado correctamente!');
             form.reset();
           }
         } catch (err) {
           console.error("Excepción:", err);
           status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-red-100 text-red-800 border border-red-300';
           status.innerText = '❌ Excepción: ' + err.message;
-          alert('Excepción: ' + err.message);
         }
       });
     }
