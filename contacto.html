@@ -159,19 +159,20 @@
           return;
         }
 
-        const nombre = document.getElementById('nombre').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const telefono = document.getElementById('telefono').value.trim();
-        const mensaje = document.getElementById('mensaje').value.trim();
+        const nombreVal = document.getElementById('nombre').value.trim();
+        const emailVal = document.getElementById('email').value.trim();
+        const telefonoVal = document.getElementById('telefono').value.trim();
+        const mensajeVal = document.getElementById('mensaje').value.trim();
 
         try {
+          // Usamos columnas en minúsculas (nombre, email, telefono, mensaje) que es lo estándar en Supabase
           const { data, error } = await supabaseClient
             .from('Contactos')
             .insert([{ 
-              Nombre: nombre, 
-              Email: email, 
-              Telefono: telefono, 
-              Mensaje: mensaje 
+              nombre: nombreVal, 
+              email: emailVal, 
+              telefono: telefonoVal, 
+              mensaje: mensajeVal 
             }]);
 
           if (error) {
