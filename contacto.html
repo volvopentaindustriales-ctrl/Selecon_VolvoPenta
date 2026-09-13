@@ -1,185 +1,88 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto e Historia - SELECON Volvo Penta Industrial</title>
-​<!-- Supabase JS -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-​<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-primary: '#002B49',
-primaryLight: '#003F6B',
-accent: '#D71920',
-volvoCyan: '#38BDF8'
-}
-}
-}
-}
-</script>
-</head>
-<body class="bg-slate-100 text-slate-800 antialiased flex flex-col min-h-screen">
-​<header class="bg-primary shadow-lg sticky top-0 z-50">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row justify-between items-center">
-<div class="flex items-center space-x-3 mb-3 md:mb-0">
-<div class="bg-white rounded p-1.5 w-28 h-10 flex items-center justify-center">
-<img src="https://i.ibb.co/0VRVnbhj/selecon.png" alt="SELECON" class="max-h-full object-contain">
+ <!-- Logotipos -->
+    <div class="flex items-center space-x-4 mb-4 md:mb-0">
+      <div class="bg-white rounded-md p-2 w-36 h-14 flex items-center justify-center shadow-inner">
+        <img src="https://i.ibb.co/0VRVnbhj/selecon.png" alt="SELECON" class="max-h-full max-w-full object-contain">
+      </div>
+      <span class="text-white/30 text-2xl font-light">|</span>
+      <div class="bg-white rounded-md p-2 w-36 h-14 flex items-center justify-center shadow-inner">
+        <img src="https://i.ibb.co/V0kNW5hL/volvop1.jpg" alt="Volvo Penta" class="max-h-full max-w-full object-contain">
+      </div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm sm:text-base font-medium">
+      <a href="index.html" class="text-white hover:text-volvoCyan transition-colors py-2">Inicio</a>
+      <a href="servicios.html" class="text-white hover:text-volvoCyan transition-colors py-2">Servicios</a>
+      <a href="vodia.html" class="text-white hover:text-volvoCyan transition-colors py-2">VODIA</a>
+      <a href="accesorios.html" class="text-white hover:text-volvoCyan transition-colors py-2">Accesorios</a>
+      <a href="contacto.html" class="text-volvoCyan font-bold border-b-2 border-volvoCyan py-2">Contacto</a>
+    </nav>
+  </div>
 </div>
-<span class="text-white/30">|</span>
-<div class="bg-white rounded p-1.5 w-28 h-10 flex items-center justify-center">
-<img src="https://i.ibb.co/V0kNW5hL/volvop1.jpg" alt="Volvo Penta" class="max-h-full object-contain">
-</div>
-</div>
-<nav class="flex flex-wrap justify-center gap-4 text-sm font-medium">
-<a href="index.html" class="text-white hover:text-volvoCyan">Inicio</a>
-<a href="servicios.html" class="text-white hover:text-volvoCyan">Servicios</a>
-<a href="vodia.html" class="text-white hover:text-volvoCyan">VODIA</a>
-<a href="accesorios.html" class="text-white hover:text-volvoCyan">Accesorios</a>
-<a href="contacto.html" class="text-volvoCyan font-bold border-b-2 border-volvoCyan">Contacto</a>
-</nav>
-</div>
-</header>
-​<main class="flex-grow max-w-5xl mx-auto px-4 py-10 w-full space-y-10">
-​<!-- HISTORIA Y SOBRE NOSOTROS -->
+
+
+<!-- HISTORIA Y SOBRE NOSOTROS -->
 <section class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200">
-<h1 class="text-2xl sm:text-3xl font-extrabold text-primary mb-4">Nuestra Trayectoria e Historia</h1>
-<div class="space-y-4 text-slate-600 leading-relaxed">
-<p>
-En <strong class="text-primary">SELECON</strong> nos hemos consolidado como el servicio técnico de referencia para motores y sistemas industriales en Andalucía. Con una sólida experiencia vinculada a la excelencia de <strong>Volvo Penta</strong>, nuestra misión siempre ha sido garantizar la máxima disponibilidad operativa de las instalaciones de nuestros clientes.
-</p>
-</div>
+  <h1 class="text-2xl sm:text-3xl font-extrabold text-primary mb-4">Nuestra Trayectoria e Historia</h1>
+  <div class="space-y-4 text-slate-600 leading-relaxed">
+    <p>
+      En <strong class="text-primary">SELECON</strong> nos hemos consolidado como el servicio técnico de referencia para motores y sistemas industriales en Andalucía. Con una sólida experiencia vinculada a la excelencia de <strong>Volvo Penta</strong>, nuestra misión siempre ha sido garantizar la máxima disponibilidad operativa de las instalaciones de nuestros clientes.
+    </p>
+  </div>
 </section>
-​<!-- DATOS DE CONTACTO Y UBICACIÓN -->
+
+<!-- DATOS DE CONTACTO Y UBICACIÓN -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-​<div class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200 flex flex-col justify-between">
-<div>
-<h2 class="text-xl font-bold text-primary mb-4">Ubicación y Horario</h2>
-<p class="font-bold text-slate-800">SELECON - Servicio Oficial Volvo Penta Industrial</p>
-<p class="text-slate-600 mt-1">Polígono Industrial Macarena, C/ Química 19</p>
-<p class="text-slate-600">41015 Sevilla, España</p>
-​<div class="mt-4 space-y-1 text-sm text-slate-600">
-<p><strong>Horario:</strong> Lunes a Viernes de 8:00 a 19:00 h</p>
-<p><strong>Email:</strong> volvopentaindustrial@selecon.es</p>
+  
+  <!-- UBICACIÓN Y MAPA -->
+  <div class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200 flex flex-col justify-between">
+    <div>
+      <h2 class="text-xl font-bold text-primary mb-4">Ubicación y Horario</h2>
+      <p class="font-bold text-slate-800">SELECON - Servicio Oficial Volvo Penta Industrial</p>
+      <p class="text-slate-600 mt-1">Polígono Industrial Macarena, C/ Química 19</p>
+      <p class="text-slate-600">41015 Sevilla, España</p>
+      
+      <div class="mt-4 space-y-1 text-sm text-slate-600">
+        <p><strong>Horario:</strong> Lunes a Viernes de 8:00 a 19:00 h</p>
+        <p><strong>Email:</strong> volvopentaindustrial@selecon.es</p>
+      </div>
+    </div>
+
+    <a href="https://maps.app.goo.gl/gvESUcJ5GBTFQbCX7" target="_blank" rel="noopener noreferrer" 
+       class="mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg text-center transition-colors shadow flex items-center justify-center space-x-2">
+      <span>📍 Abrir en Google Maps / Ruta GPS</span>
+    </a>
+  </div>
+
+  <!-- FORMULARIO SUPABASE -->
+  <div class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200">
+    <form id="contactForm" class="space-y-4">
+      <h2 class="text-xl font-bold text-primary mb-2">Envíenos su Consulta</h2>
+      <div>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required
+               class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
+      </div>
+      <div>
+        <input type="email" id="email" name="email" placeholder="Correo electrónico" required
+               class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
+      </div>
+      <div>
+        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono de contacto"
+               class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
+      </div>
+      <div>
+        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Detalles de su consulta..." required
+                  class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none"></textarea>
+      </div>
+      <button type="submit" id="submitBtn" class="w-full bg-primary hover:bg-primaryLight text-white font-bold py-3 px-4 rounded-lg transition-colors shadow">
+        Enviar Mensaje
+      </button>
+      
+      <!-- CUADRO DE ESTADO -->
+      <div id="formStatus" class="p-4 mt-3 rounded-lg text-center text-sm font-bold bg-slate-200 text-slate-700 border border-slate-300">
+        Estado: Listo para enviar
+      </div>
+    </form>
+  </div>
+
 </div>
-</div>
-​<a href="https://maps.app.goo.gl/gvESUcJ5GBTFQbCX7" target="_blank" rel="noopener noreferrer" 
-class="mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg text-center transition-colors shadow flex items-center justify-center space-x-2">
-<span>📍 Abrir en Google Maps / Ruta GPS</span>
-</a>
-</div>
-​<!-- FORMULARIO SUPABASE + EMAIL -->
-<div class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200">
-<form id="contactForm" class="space-y-4">
-<h2 class="text-xl font-bold text-primary mb-2">Envíenos su Consulta</h2>
-<div>
-<input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required
-class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
-</div>
-<div>
-<input type="email" id="email" name="email" placeholder="Correo electrónico" required
-class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
-</div>
-<div>
-<input type="tel" id="telefono" name="telefono" placeholder="Teléfono de contacto"
-class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
-</div>
-<div>
-<textarea id="mensaje" name="mensaje" rows="3" placeholder="Detalles de su consulta..." required
-class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none"></textarea>
-</div>
-<button type="submit" id="submitBtn" class="w-full bg-primary hover:bg-primaryLight text-white font-bold py-3 px-4 rounded-lg transition-colors shadow">
-Enviar Mensaje
-</button>
-​<!-- CUADRO DE ESTADO -->
-<div id="formStatus" class="p-4 mt-3 rounded-lg text-center text-sm font-bold bg-slate-200 text-slate-700 border border-slate-300">
-Estado: Listo para enviar
-</div>
-</form>
-</div>
-​</div>
-​</main>
-​<footer class="bg-primary text-white py-6 mt-auto text-center text-sm">
-<p>© 2026 SELECON - Servicio Oficial Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
-</footer>
-​<script>
-const SUPABASE_URL = 'https://naxvisgsqzqqxppaozbp.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_1roH47k0JskCosWdbLufJw_cbmGK_It';
-​let supabaseClient = null;
-const status = document.getElementById('formStatus');
-​window.addEventListener('DOMContentLoaded', () => {
-try {
-if (typeof supabase === 'undefined') {
-throw new Error("Librería de Supabase no cargada.");
-}
-supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-green-100 text-green-800 border border-green-300';
-status.innerText = '✅ Conectado. Listo para enviar.';
-} catch (err) {
-status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-red-100 text-red-800 border border-red-300';
-status.innerText = '❌ Error de conexión: ' + err.message;
-}
-});
-​const form = document.getElementById('contactForm');
-​if (form) {
-form.addEventListener('submit', async (e) => {
-e.preventDefault();
-​status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-blue-100 text-blue-800 border border-blue-300';
-status.innerText = '⏳ Guardando y enviando correos...';
-​if (!supabaseClient) {
-status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-amber-100 text-amber-800 border border-amber-300';
-status.innerText = '⚠️ Error: Supabase no está activo';
-return;
-}
-​const nombreVal = document.getElementById('nombre').value.trim();
-const emailVal = document.getElementById('email').value.trim();
-const telefonoVal = document.getElementById('telefono').value.trim();
-const mensajeVal = document.getElementById('mensaje').value.trim();
-​try {
-// 1. Guardar en Supabase con minúsculas exactas
-const { error } = await supabaseClient
-.from('Contactos')
-.insert([{
-nombre: nombreVal,
-email: emailVal,
-telefono: telefonoVal,
-mensaje: mensajeVal
-}]);
-​if (error) {
-throw error;
-}
-​// 2. Enviar notificación por email a ambos correos usando FormSubmit
-// Enviamos a volvopentaindustriales@gmail.com (y cc a volvopentaindustrial@selecon.es)
-await fetch("https://formsubmit.co/ajax/volvopentaindustriales@gmail.com", {
-method: "POST",
-headers: {
-'Content-Type': 'application/json',
-'Accept': 'application/json'
-},
-body: JSON.stringify({
-_subject: "Nuevo mensaje de contacto web - SELECON",
-_cc: "volvopentaindustrial@selecon.es",
-Nombre: nombreVal,
-Email: emailVal,
-Teléfono: telefonoVal,
-Mensaje: mensajeVal
-})
-});
-​status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-green-100 text-green-800 border border-green-300';
-status.innerText = '✅ ¡Guardado en base de datos y correos enviados a ambas cuentas!';
-form.reset();
-​} catch (err) {
-console.error("Error:", err);
-status.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-red-100 text-red-800 border border-red-300';
-status.innerText = '❌ Error: ' + (err.message || 'Ocurrió un problema');
-alert("Error: " + (err.message || 'No se pudo completar el envío'));
-}
-});
-}
-</script>
-​</body>
-</html>
