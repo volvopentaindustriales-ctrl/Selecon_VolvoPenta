@@ -14,39 +14,36 @@
       --card-bg: #FFFFFF;
       --border-color: #CBD5E1;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { background-color: var(--bg); color: var(--text); line-height: 1.7; }
 
-    /* Barra superior de contacto */
+    /* Barra superior */
     .top-bar { background: var(--primary-dark); color: #94A3B8; padding: 0.5rem 2rem; font-size: 0.85rem; display: flex; justify-content: flex-end; gap: 2rem; }
     .top-bar span { color: #E2E8F0; font-weight: 500; }
 
-    /* Navegación principal */
+    /* Cabecera */
     header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 1000; }
-    .logo-area { display: flex; flex-direction: column; }
-    .logo-area h2 { font-size: 1.3rem; font-weight: 800; letter-spacing: 0.5px; color: #FFFFFF; }
+    .logo-area h2 { font-size: 1.3rem; font-weight: 800; color: #FFFFFF; }
     .logo-area span { font-size: 0.75rem; color: #38BDF8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
     nav { display: flex; gap: 1.5rem; align-items: center; }
     nav a { color: #E2E8F0; text-decoration: none; font-weight: 500; transition: all 0.2s; font-size: 0.95rem; padding: 0.4rem 0.8rem; border-radius: 4px; }
     nav a:hover, nav a.active { color: white; background: rgba(255,255,255,0.1); }
 
-    /* Hero Banner interno */
+    /* Banner */
     .hero-banner { background: linear-gradient(135deg, var(--primary) 0%, #001A2E 100%); color: white; padding: 4rem 2rem; text-align: center; border-bottom: 5px solid var(--accent); }
     .hero-banner h1 { font-size: 2.4rem; margin-bottom: 0.8rem; font-weight: 800; }
     .hero-banner p { font-size: 1.1rem; color: #94A3B8; max-width: 700px; margin: 0 auto; }
 
-    /* Contenedor principal */
+    /* Contenedor */
     .container { max-width: 1200px; margin: -2.5rem auto 4rem auto; padding: 0 1.5rem; position: relative; z-index: 10; }
 
-    /* Tarjetas de servicios renovadas */
-    .service-card { background: var(--card-bg); border-radius: 16px; padding: 2.5rem; margin-bottom: 2.5rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.08); border: 1px solid var(--border-color); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; transition: transform 0.2s ease; }
-    .service-card:hover { transform: translateY(-3px); }
-    
+    /* Tarjetas de Servicios con imágenes locales */
+    .service-card { background: var(--card-bg); border-radius: 16px; padding: 2.5rem; margin-bottom: 2.5rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); border: 1px solid var(--border-color); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
     .service-card:nth-child(even) { grid-template-columns: 0.9fr 1.1fr; }
     .service-card:nth-child(even) img { order: -1; }
 
-    .service-card img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.12); border: 2px solid #E2E8F0; }
+    .service-card img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.12); border: 2px solid #E2E8F0; }
     
     .service-info h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.8rem; font-weight: 700; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 0.3rem; }
     .service-info p { color: #475569; margin-bottom: 1.2rem; font-size: 1.05rem; }
@@ -54,43 +51,31 @@
     .service-info li { position: relative; padding-left: 1.5rem; margin-bottom: 0.6rem; color: #334155; font-weight: 500; }
     .service-info li::before { content: "✔"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
-    .btn-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 700; text-decoration: none; padding: 0.5rem 0; transition: color 0.2s; }
+    .btn-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 700; text-decoration: none; padding: 0.5rem 0; }
     .btn-link:hover { color: var(--accent); text-decoration: underline; }
 
-    /* Caja CTA final */
+    /* CTA Box */
     .cta-box { background: linear-gradient(135deg, var(--primary) 0%, #004070 100%); color: white; border-radius: 16px; padding: 3.5rem 2rem; text-align: center; margin-top: 4rem; box-shadow: 0 12px 30px rgba(0,43,73,0.2); }
     .cta-box h2 { margin-bottom: 0.8rem; font-size: 2rem; font-weight: 700; }
-    .cta-box p { color: #CBD5E1; margin-bottom: 2rem; font-size: 1.1rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+    .cta-box p { color: #CBD5E1; margin-bottom: 2rem; font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
     
     .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-    .btn { background: var(--accent); color: white; padding: 0.9rem 2rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 10px rgba(215,25,32,0.3); }
-    .btn:hover { background: #B5141A; transform: translateY(-2px); }
-    .btn-sec { background: #0284C7; color: white; padding: 0.9rem 2rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2,132,199,0.3); }
-    .btn-sec:hover { background: #026AA7; transform: translateY(-2px); }
+    .btn { background: var(--accent); color: white; padding: 0.9rem 2rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.2s; }
+    .btn:hover { background: #B5141A; }
+    .btn-sec { background: #0284C7; color: white; padding: 0.9rem 2rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.2s; }
+    .btn-sec:hover { background: #026AA7; }
 
-    /* Pie de página */
     footer { background: var(--primary-dark); color: #94A3B8; text-align: center; padding: 3rem 2rem; margin-top: 5rem; font-size: 0.9rem; border-top: 4px solid var(--accent); }
-    footer p { max-width: 800px; margin: 0 auto; }
-
-    /* Responsivo para móviles */
-    @media (max-width: 768px) {
-      .service-card, .service-card:nth-child(even) { grid-template-columns: 1fr; gap: 1.5rem; }
-      .service-card:nth-child(even) img { order: unset; }
-      header { flex-direction: column; gap: 1rem; }
-      nav { width: 100%; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
-      .hero-banner h1 { font-size: 1.8rem; }
-    }
   </style>
 </head>
 <body>
 
-  <!-- Barra superior de contacto corporativo -->
+  <!-- Barra superior con el teléfono cambiado -->
   <div class="top-bar">
-    <div>📞 Soporte Técnico: <span>Servicio Oficial Sevilla</span></div>
-    <div>✉️ Contacto: <span>calidad@selecon.es</span></div>
+    <div>Soporte Técnico: <span>Telf 954915887</span></div>
+    <div>Contacto: <span>calidad@selecon.es</span></div>
   </div>
 
-  <!-- Cabecera principal -->
   <header>
     <div class="logo-area">
       <h2>SELECON</h2>
@@ -105,16 +90,14 @@
     </nav>
   </header>
 
-  <!-- Banner Superior -->
   <section class="hero-banner">
     <h1>Servicios Técnicos Especializados</h1>
     <p>Soluciones de ingeniería, mantenimiento integral y asistencia oficial para motores e instalaciones industriales en Andalucía.</p>
   </section>
 
-  <!-- Contenido de Servicios con Imágenes Locales -->
   <main class="container">
 
-    <!-- Tarjeta 1: Generación de Energía (Usa cuadro de trabajo.png) -->
+    <!-- Sección Generación de Energía (Usa cuadro de trabajo.png) -->
     <div class="service-card">
       <div class="service-info">
         <h2>Generación de Energía (Power Generation)</h2>
@@ -122,7 +105,7 @@
         <ul>
           <li>Revisiones semestrales programadas e inspección de consumibles.</li>
           <li>Diagnóstico avanzado de centralitas y sistemas electrónicos con VODIA.</li>
-          <li>Reparación de sistemas de inyección, turbos y post-tratamiento de gases (SCR).</li>
+          <li>Reparación de sistemas de inyección, turbos y post-tratamiento (SCR).</li>
         </ul>
         <a href="https://www.volvopenta.com/industrial/power-generation/" target="_blank" rel="noopener noreferrer" class="btn-link">
           Ver Sección Oficial Volvo Penta &nearr;
@@ -131,13 +114,12 @@
       <img src="imagenes/cuadro de trabajo.png" alt="Cuadro de trabajo y mantenimiento de grupos electrógenos SELECON">
     </div>
 
-    <!-- Tarjeta 2: Maquinaria Off-Road (Usa img3.jpg) -->
+    <!-- Sección Off-Road (Usa img3.jpg) -->
     <div class="service-card">
-      <!-- La imagen se coloca primero en esta tarjeta por el grid alterno -->
       <img src="imagenes/img3.jpg" alt="Asistencia técnica en maquinaria industrial Off-Road Volvo Penta">
       <div class="service-info">
         <h2>Maquinaria Industrial (Off-Road)</h2>
-        <p>Asistencia técnica integral para maquinaria de obras públicas, equipos de minería, motobombas y aplicaciones móviles industriales en campo o taller.</p>
+        <p>Asistencia técnica integral para maquinaria de obras públicas, equipos de minería, motobombas y aplicaciones móviles industriales.</p>
         <ul>
           <li>Intervenciones mecánicas in situ con unidades móviles equipadas.</li>
           <li>Verificación de sistemas hidráulicos, eléctricos y de potencia.</li>
@@ -149,7 +131,6 @@
       </div>
     </div>
 
-    <!-- Bloque de Llamada a la Acción -->
     <div class="cta-box">
       <h2>¿Necesita asistencia para su motor industrial?</h2>
       <p>Póngase en contacto con nuestro equipo técnico en Sevilla o consulte los canales oficiales de soporte de la marca.</p>
@@ -161,7 +142,6 @@
 
   </main>
 
-  <!-- Pie de página -->
   <footer>
     <p>&copy; 2026 SELECON (Sevillana de Electrocomunicación S.L.) - Servicio Oficial Volvo Penta Industrial en Sevilla. Todos los derechos reservados.</p>
   </footer>
