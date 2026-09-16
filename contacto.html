@@ -151,13 +151,11 @@
     </div>
   </footer>
 
-  <!-- Script con diagnóstico estricto de errores -->
+  <!-- Script con la URL corregida de tu proyecto SeleconWeb -->
   <script>
+    const SUPABASE_URL = 'https://naxvisgsqzqqxppaozbp.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_1roH47k0JskCosWdbLufJw_cbmGK_It';
 
-     const SUPABASE_URL = 'https://iozkdoukji2cprzxcmwt.supabase.co';
-     const SUPABASE_ANON_KEY = 'sb_publishable_1roH47k0JskCosWdbLufJw_cbmGK_It';
-
-    
     let supabaseClient = null;
     try {
       if (window.supabase && SUPABASE_URL) {
@@ -196,11 +194,11 @@
           statusDiv.textContent = '❌ Error de Supabase: ' + error.message;
           submitBtn.disabled = false;
           submitBtn.textContent = 'Enviar Mensaje';
-          return; // Se detiene aquí si Supabase rechaza la petición
+          return; // Detiene el proceso para reportar el error en pantalla
         }
       }
 
-      // 2. Si Supabase guardó bien, enviar aviso por FormSubmit
+      // 2. Si Supabase guardó con éxito, enviar por FormSubmit
       try {
         await fetch('https://formsubmit.co/ajax/889c2770d904f27a4a85fd0861b9215d', {
           method: 'POST',
@@ -211,7 +209,7 @@
         console.warn("Aviso FormSubmit:", e);
       }
 
-      // ÉXITO
+      // ÉXITO COMPLETO
       statusDiv.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-green-100 text-green-800 border border-green-300';
       statusDiv.textContent = '✅ ¡Guardado en Supabase y enviado por correo!';
       document.getElementById('contactForm').reset();
