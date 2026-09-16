@@ -18,7 +18,9 @@
     body { background-color: var(--bg); color: var(--text); line-height: 1.7; }
 
     /* Barra superior */
-    .top-bar { background: var(--primary-dark); color: #94A3B8; padding: 0.5rem 2rem; font-size: 0.85rem; display: flex; justify-content: flex-end; gap: 2rem; }
+    .top-bar { background: var(--primary-dark); color: #94A3B8; padding: 0.6rem 2rem; font-size: 0.9rem; display: flex; justify-content: flex-end; gap: 2.5rem; align-items: center; }
+    .top-bar a { color: #38BDF8; text-decoration: none; font-weight: 700; }
+    .top-bar a:hover { text-decoration: underline; }
     .top-bar span { color: #E2E8F0; font-weight: 500; }
 
     /* Cabecera */
@@ -70,9 +72,9 @@
 </head>
 <body>
 
-  <!-- Barra superior con el teléfono cambiado -->
+  <!-- Barra superior con el teléfono interactivo arriba del todo -->
   <div class="top-bar">
-    <div>Soporte Técnico: <span>Telf 954915887</span></div>
+    <div>Soporte Técnico: <a href="tel:954915887">Telf 954915887</a></div>
     <div>Contacto: <span>calidad@selecon.es</span></div>
   </div>
 
