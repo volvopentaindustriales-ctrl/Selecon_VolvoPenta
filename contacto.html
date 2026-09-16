@@ -34,6 +34,12 @@
 </head>
 <body class="text-slate-800 antialiased flex flex-col min-h-screen">
 
+  <!-- Barra superior con el teléfono interactivo -->
+  <div class="bg-[#001A2E] text-slate-300 px-4 py-2 text-sm flex justify-between items-center flex-wrap gap-2">
+    <div>Soporte Técnico: <a href="tel:954915887" class="text-volvoCyan font-bold hover:underline">Telf 954915887</a></div>
+    <div>Contacto: <span class="text-white font-medium">calidad@selecon.es</span></div>
+  </div>
+
   <header class="bg-primary shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center py-4">
@@ -73,6 +79,18 @@
       </div>
     </section>
 
+    <!-- SECCIÓN DE IMÁGENES CORPORATIVAS (img1.jpg y img3.jpg) -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col items-center">
+        <img src="imagenes/img1.jpg" alt="Instalaciones y equipos SELECON Volvo Penta" class="w-full h-64 object-cover rounded-lg shadow border border-slate-200">
+        <p class="text-sm text-slate-500 mt-3 font-medium text-center">Instalaciones técnicas y centro de servicio en Sevilla</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col items-center">
+        <img src="imagenes/img3.jpg" alt="Asistencia técnica en campo SELECON" class="w-full h-64 object-contain bg-slate-50 p-2 rounded-lg shadow border border-slate-200">
+        <p class="text-sm text-slate-500 mt-3 font-medium text-center">Soporte especializado y maquinaria industrial</p>
+      </div>
+    </section>
+
     <!-- DATOS DE CONTACTO Y UBICACIÓN -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       
@@ -86,6 +104,7 @@
           
           <div class="mt-4 space-y-1 text-sm text-slate-600">
             <p><strong>Horario:</strong> Lunes a Viernes de 8:00 a 19:00 h</p>
+            <p><strong>Teléfono:</strong> <a href="tel:954915887" class="text-primary font-bold hover:underline">954 91 58 87</a></p>
             <p><strong>Email:</strong> volvopentaindustrial@selecon.es</p>
           </div>
         </div>
@@ -144,14 +163,17 @@
   </main>
 
   <footer class="bg-primary text-white py-8 mt-auto border-t border-slate-700">
-    <div class="max-w-7xl mx-auto px-4 text-center">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
       <p class="text-slate-400 text-sm">
-        &copy; 2026 SELECON - Servicio Oficial Volvo Penta Industrial Sevilla. Todos los derechos reservados.
+        &copy; 2026 SELECON (Sevillana de Electrocomunicación S.L.) - Servicio Oficial Volvo Penta Industrial Sevilla. Todos los derechos reservados.
+      </p>
+      <p>
+        <a href="tel:954915887" class="text-volvoCyan font-bold text-sm hover:underline">Teléfono de asistencia: 954 91 58 87</a>
       </p>
     </div>
   </footer>
 
-  <!-- Script con la URL corregida de tu proyecto SeleconWeb -->
+  <!-- Script con la URL de Supabase y FormSubmit -->
   <script>
     const SUPABASE_URL = 'https://naxvisgsqzqqxppaozbp.supabase.co';
     const SUPABASE_ANON_KEY = 'sb_publishable_1roH47k0JskCosWdbLufJw_cbmGK_It';
@@ -194,7 +216,7 @@
           statusDiv.textContent = '❌ Error de Supabase: ' + error.message;
           submitBtn.disabled = false;
           submitBtn.textContent = 'Enviar Mensaje';
-          return; // Detiene el proceso para reportar el error en pantalla
+          return;
         }
       }
 
