@@ -5,27 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios Industriales - SELECON Volvo Penta Sevilla</title>
   <style>
-    :root { --primary: #002B49; --accent: #D71920; --bg: #F8FAFC; --text: #1E293B; }
+    :root { 
+      --primary: #002B49; 
+      --accent: #D71920; 
+      --bg: #F8FAFC; 
+      --text: #1E293B; 
+      --card-bg: #FFFFFF;
+      --border-color: #E2E8F0;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
 
-    header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.2s; }
-    nav a:hover, nav a.active { color: #38BDF8; font-weight: bold; }
+    header { background: var(--primary); color: white; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+    header h2 { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.5px; }
+    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
+    nav a:hover, nav a.active { color: #38BDF8; }
 
-    .container { max-width: 1100px; margin: 3rem auto; padding: 0 1rem; }
-    .page-title { text-align: center; color: var(--primary); margin-bottom: 2rem; }
+    .container { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
+    .page-title { text-align: center; color: var(--primary); margin-bottom: 2.5rem; font-size: 2rem; }
 
-    .service-detail { background: white; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center; }
-    .service-detail img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
-    .service-detail h2 { color: var(--primary); margin-bottom: 0.8rem; }
-    .service-detail ul { margin-left: 1.2rem; margin-top: 0.5rem; }
+    .service-detail { background: var(--card-bg); border-radius: 12px; padding: 2.5rem; margin-bottom: 2.5rem; box-shadow: 0 4px 16px rgba(0,0,0,0.05); border: 1px solid var(--border-color); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; align-items: center; }
+    .service-detail img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .service-detail h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem; }
+    .service-detail p { color: #475569; margin-bottom: 1rem; }
+    .service-detail ul { margin-left: 1.2rem; margin-top: 0.5rem; color: #475569; }
+    .service-detail li { margin-bottom: 0.4rem; }
 
-    .cta-box { background: var(--primary); color: white; border-radius: 12px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
-    .btn { background: var(--accent); color: white; padding: 0.8rem 1.6rem; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; margin-top: 1rem; }
-    .btn-sec { background: #0284C7; color: white; padding: 0.8rem 1.6rem; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; margin-top: 1rem; margin-left: 0.5rem; }
+    .external-link { display: inline-block; margin-top: 1.2rem; color: var(--accent); font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .external-link:hover { opacity: 0.85; text-decoration: underline; }
 
-    footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+    .cta-box { background: linear-gradient(135deg, var(--primary) 0%, #004070 100%); color: white; border-radius: 12px; padding: 3rem 2rem; text-align: center; margin-top: 4rem; box-shadow: 0 6px 20px rgba(0,43,73,0.15); }
+    .cta-box h2 { margin-bottom: 0.8rem; font-size: 1.8rem; }
+    .cta-box p { color: #CBD5E1; margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    
+    .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .btn { background: var(--accent); color: white; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s, transform 0.1s; }
+    .btn:hover { background: #B5141A; transform: translateY(-1px); }
+    .btn-sec { background: #0284C7; color: white; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s, transform 0.1s; }
+    .btn-sec:hover { background: #026AA7; transform: translateY(-1px); }
+
+    footer { background: var(--primary); color: #94A3B8; text-align: center; padding: 2.5rem; margin-top: 5rem; font-size: 0.9rem; border-top: 4px solid var(--accent); }
   </style>
 </head>
 <body>
@@ -48,31 +67,33 @@
     <div class="service-detail">
       <div>
         <h2>Generación de Energía (Power Generation)</h2>
-        <p>Servicio técnico para motores diésel en grupos electrógenos y sistemas de energía continua o de emergencia.</p>
+        <p>Servicio técnico oficial especializado en motores diésel para grupos electrógenos, plantas de emergencia y sistemas de energía continua.</p>
         <ul>
-          <li>Mantenimiento preventivo periódico en instalaciones.</li>
-          <li>Reparación de sistemas de inyección, turbos y refrigeración.</li>
+          <li>Mantenimiento preventivo y correctivo periódico en instalaciones.</li>
+          <li>Diagnóstico avanzado con software oficial Volvo Penta VODIA.</li>
+          <li>Reparación y ajuste de sistemas de inyección, turbos y post-tratamiento (SCR).</li>
         </ul>
-        <br>
-        <a href="https://www.volvopenta.com/industrial/power-generation/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: bold;">
+        <a href="https://www.volvopenta.com/industrial/power-generation/" target="_blank" rel="noopener noreferrer" class="external-link">
           Sección Oficial: Generación de Energía &nearr;
         </a>
       </div>
-      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Generación de Energía">
+      <!-- Imagen local integrada -->
+      <img src="imagenes/cuadro de trabajo.png" alt="Cuadro de trabajo y mantenimiento de grupos electrógenos SELECON">
     </div>
 
     <!-- Sección Off-Road -->
     <div class="service-detail">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Maquinaria Industrial Off-Road">
+      <!-- Imagen local integrada -->
+      <img src="imagenes/img3.jpg" alt="Asistencia técnica en maquinaria industrial Off-Road Volvo Penta">
       <div>
         <h2>Maquinaria Industrial (Off-Road)</h2>
-        <p>Asistencia técnica para equipos de construcción, minería, motobombas y maquinaria móvil.</p>
+        <p>Asistencia técnica integral para maquinaria de obras públicas, equipos de minería, motobombas y aplicaciones móviles industriales.</p>
         <ul>
-          <li>Diagnóstico en taller o en campo.</li>
-          <li>Reconstrucción y ajuste según normativas de emisiones.</li>
+          <li>Intervenciones mecánicas en taller central o directamente en campo (servicios exteriores).</li>
+          <li>Revisión y mantenimiento de sistemas hidráulicos, eléctricos y mecánicos.</li>
+          <li>Sustitución de consumibles originales y componentes críticos bajo normativa.</li>
         </ul>
-        <br>
-        <a href="https://www.volvopenta.com/industrial/industrial-engines/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: bold;">
+        <a href="https://www.volvopenta.com/industrial/industrial-engines/" target="_blank" rel="noopener noreferrer" class="external-link">
           Sección Oficial: Catálogo Off-Road &nearr;
         </a>
       </div>
@@ -80,14 +101,16 @@
 
     <div class="cta-box">
       <h2>¿Necesita asistencia para su motor industrial?</h2>
-      <p>Contacte con nuestro centro de servicio técnico local en Sevilla o visite el portal oficial.</p>
-      <a href="contacto.html" class="btn">Solicitar Presupuesto</a>
-      <a href="https://www.volvopenta.com/es-es/" target="_blank" rel="noopener noreferrer" class="btn-sec">Soporte Técnico Oficial &nearr;</a>
+      <p>Contacte con nuestro equipo técnico especializado en Sevilla o consulte el soporte oficial de la marca.</p>
+      <div class="btn-group">
+        <a href="contacto.html" class="btn">Solicitar Asistencia</a>
+        <a href="https://www.volvopenta.com/es-es/" target="_blank" rel="noopener noreferrer" class="btn-sec">Soporte Técnico Oficial &nearr;</a>
+      </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+    <p>&copy; 2026 SELECON (Sevillana de Electrocomunicación S.L.) - Servicio Oficial Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
   </footer>
 
 </body>
