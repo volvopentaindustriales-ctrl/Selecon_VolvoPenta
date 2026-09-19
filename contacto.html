@@ -220,9 +220,9 @@
         }
       }
 
-      // 2. Si Supabase guardó con éxito, enviar por FormSubmit
+      // 2. Si Supabase guardó con éxito, enviar por FormSubmit a los tres emails
       try {
-        await fetch('https://formsubmit.co/ajax/889c2770d904f27a4a85fd0861b9215d', {
+        await fetch('https://formsubmit.co/ajax/volvopentaindustriales@gmail.com,jmlobillo@gmail.com,volvopentaindustrial@selecon.es', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({ nombre, email, telefono, mensaje, _subject: 'Nuevo contacto SELECON' })
