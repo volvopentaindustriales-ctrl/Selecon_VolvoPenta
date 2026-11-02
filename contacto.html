@@ -3,279 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - SELECON Volvo Penta Industrial</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Contacto y Servicio Técnico Volvo Penta en Sevilla | SELECON</title>
+  <meta name="description" content="Contacte con SELECON en Sevilla para servicio técnico Volvo Penta industrial. Polígono Macarena, teléfono 954 91 58 87 y formulario de consulta.">
+  <link rel="canonical" href="https://volvopentaindustriales-ctrl.github.io/Selecon_VolvoPenta/contacto.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Estilos de toda la web (un solo archivo) -->
+  <link rel="stylesheet" href="estilos.css">
+
   <!-- Supabase Client Library -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#002B49',
-            primaryLight: '#003F6B',
-            accent: '#D71920',
-            accentHover: '#B9151B',
-            volvoCyan: '#38BDF8'
-          },
-          fontFamily: {
-            sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    body { background-color: #F1F5F9; }
-  </style>
 </head>
-<body class="text-slate-800 antialiased flex flex-col min-h-screen">
+<body>
 
-  <!-- Barra superior con el teléfono interactivo -->
-  <div class="bg-[#001A2E] text-slate-300 px-4 py-2 text-sm flex justify-between items-center flex-wrap gap-2">
-    <div>Soporte Técnico: <a href="tel:954915887" class="text-volvoCyan font-bold hover:underline">Telf 954915887</a></div>
-    <div>Contacto: <span class="text-white font-medium">calidad@selecon.es</span></div>
+  <div class="top-bar">
+    <div class="container">
+      <div>Soporte Técnico: <a href="tel:+34954915887">954 91 58 87</a></div>
+      <div>Contacto: <span>calidad@selecon.es</span></div>
+    </div>
   </div>
 
-  <header class="bg-primary shadow-lg sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center py-4">
-        
-        <!-- Logotipos corporativos con tamaño y proporción correcta -->
-        <div class="flex items-center space-x-6 mb-4 md:mb-0">
-          <div class="bg-white rounded-lg px-6 py-3 h-24 flex items-center justify-center shadow-inner">
-            <img src="imagenes/foto.jpg" alt="SELECON" class="h-16 w-auto object-contain">
-          </div>
-          <span class="text-white/30 text-3xl font-light">|</span>
-          <div class="bg-white rounded-lg px-6 py-3 h-24 flex items-center justify-center shadow-inner">
-            <img src="imagenes/foto2.png" alt="Volvo Penta / Imagen corporativa" class="h-16 w-auto object-contain">
-          </div>
-        </div>
-
-        <!-- Navegación -->
-        <nav class="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm sm:text-base font-medium">
-          <a href="index.html" class="text-white hover:text-volvoCyan transition-colors py-2">Inicio</a>
-          <a href="servicios.html" class="text-white hover:text-volvoCyan transition-colors py-2">Servicios</a>
-          <a href="vodia.html" class="text-white hover:text-volvoCyan transition-colors py-2">VODIA</a>
-          <a href="accesorios.html" class="text-white hover:text-volvoCyan transition-colors py-2">Accesorios</a>
-          <a href="contacto.html" class="text-volvoCyan font-bold border-b-2 border-volvoCyan py-2">Contacto</a>
-        </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logos">
+        <div class="logo-box"><img src="selecon.jpg" alt="SELECON"></div>
+        <span class="logo-sep">|</span>
+        <div class="logo-box"><img src="volvop1.jpg" alt="Volvo Penta"></div>
       </div>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="vodia.html">VODIA</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
     </div>
   </header>
 
-  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full space-y-12">
-    
-    <!-- HISTORIA Y SOBRE NOSOTROS -->
-    <section class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200">
-      <h1 class="text-2xl sm:text-3xl font-extrabold text-primary mb-4">Nuestra Trayectoria e Historia</h1>
-      <div class="space-y-4 text-slate-600 leading-relaxed">
-        <p>
-          En <strong class="text-primary">SELECON</strong> nos hemos consolidado como el servicio técnico de referencia para motores y sistemas industriales en Andalucía. Con una sólida experiencia vinculada a la excelencia de <strong>Volvo Penta</strong>, nuestra misión siempre ha sido garantizar la máxima disponibilidad operativa de las instalaciones de nuestros clientes.
-        </p>
-      </div>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contacto: servicio técnico Volvo Penta en Sevilla</h1>
+      <p>Solicite asistencia técnica, diagnosis VODIA o recambios originales. Estamos en el Polígono Macarena, en Sevilla.</p>
+    </div>
+  </section>
+
+  <main class="container stack">
+
+    <!-- Historia -->
+    <section class="panel full">
+      <h2>Nuestra Trayectoria e Historia</h2>
+      <p>
+        En <strong>SELECON</strong> nos hemos consolidado como el servicio técnico de referencia para motores y sistemas industriales en Andalucía. Con una sólida experiencia vinculada a la excelencia de <strong>Volvo Penta</strong>, nuestra misión siempre ha sido garantizar la máxima disponibilidad operativa de las instalaciones de nuestros clientes.
+      </p>
     </section>
 
-    <!-- SECCIÓN DE IMÁGENES CORPORATIVAS (img1.jpg y img3.jpg) -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col items-center">
-        <img src="imagenes/img1.jpg" alt="Instalaciones y equipos SELECON Volvo Penta" class="w-full h-64 object-cover rounded-lg shadow border border-slate-200">
-        <p class="text-sm text-slate-500 mt-3 font-medium text-center">Instalaciones técnicas y centro de servicio en Sevilla</p>
-      </div>
-      <div class="bg-white p-4 rounded-xl shadow-md border border-slate-200 flex flex-col items-center">
-        <img src="imagenes/img2.jpg" alt="Asistencia técnica en campo SELECON" class="w-full h-64 object-contain bg-slate-50 p-2 rounded-lg shadow border border-slate-200">
-        <p class="text-sm text-slate-500 mt-3 font-medium text-center">Soporte especializado y maquinaria industrial</p>
-      </div>
+    <!-- Imágenes -->
+    <section class="grid-2">
+      <figure class="figure">
+        <img src="imagenes/img1.jpg" alt="Instalaciones y equipos SELECON Volvo Penta en Sevilla" loading="lazy">
+        <figcaption>Instalaciones técnicas y centro de servicio en Sevilla</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="imagenes/img2.jpg" alt="Asistencia técnica en campo SELECON" class="contain" loading="lazy">
+        <figcaption>Soporte especializado y maquinaria industrial</figcaption>
+      </figure>
     </section>
 
-    <!-- DATOS DE CONTACTO Y UBICACIÓN -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      
-      <!-- UBICACIÓN Y MAPA -->
-      <div class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200 flex flex-col justify-between">
-        <div>
-          <h2 class="text-xl font-bold text-primary mb-4">Ubicación y Horario</h2>
-          <p class="font-bold text-slate-800">SELECON - Servicio Oficial Volvo Penta Industrial</p>
-          <p class="text-slate-600 mt-1">Polígono Industrial Macarena, C/ Química 19</p>
-          <p class="text-slate-600">41015 Sevilla, España</p>
-          
-          <div class="mt-4 space-y-1 text-sm text-slate-600">
-            <p><strong>Horario:</strong> Lunes a Viernes de 8:00 a 19:00 h</p>
-            <p><strong>Teléfono:</strong> <a href="tel:954915887" class="text-primary font-bold hover:underline">954 91 58 87</a></p>
-            <p><strong>Email:</strong> volvopentaindustrial@selecon.es</p>
-          </div>
+    <!-- Ubicación y formulario -->
+    <div class="contact-grid">
+
+      <section class="panel">
+        <h2>Ubicación y Horario</h2>
+        <p><strong>SELECON - Servicio Oficial Volvo Penta Industrial</strong></p>
+        <p>Polígono Industrial Macarena, C/ Química 19</p>
+        <p>41015 Sevilla, España</p>
+
+        <div class="contact-data">
+          <p><strong>Horario:</strong> Lunes a Viernes de 8:00 a 19:00 h</p>
+          <p><strong>Teléfono:</strong> <a href="tel:+34954915887">954 91 58 87</a></p>
+          <p><strong>Email:</strong> volvopentaindustrial@selecon.es</p>
         </div>
 
-        <!-- Mapa de Google Maps -->
-        <div class="mt-6 w-full h-56 rounded-lg overflow-hidden border border-slate-300 shadow-inner">
-          <iframe 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            loading="lazy" 
-            allowfullscreen 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3167.3!2d-5.986!3d37.409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126f2122333333%3A0x123456789abcdef!2sC.%20Qu%C3%ADmica%2C%2019%2C%2041015%20Sevilla!5e0!3m2!1ses!2ses!4v1650000000000!5m2!1ses!2ses">
-          </iframe>
+        <div class="map-box">
+          <iframe title="Mapa de SELECON en Calle Química 19, Sevilla" loading="lazy" allowfullscreen
+            src="https://www.google.com/maps?q=Calle+Qu%C3%ADmica+19,+41015+Sevilla&output=embed"></iframe>
         </div>
 
-        <a href="https://maps.app.goo.gl/gvESUcJ5GBTFQbCX7" target="_blank" rel="noopener noreferrer" 
-           class="mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg text-center transition-colors shadow flex items-center justify-center space-x-2">
-          <span>📍 Abrir ruta grande en Google Maps</span>
-        </a>
-      </div>
+        <a href="https://maps.app.goo.gl/gvESUcJ5GBTFQbCX7" target="_blank" rel="noopener noreferrer" class="btn btn-green">📍 Abrir ruta en Google Maps</a>
+      </section>
 
-      <!-- FORMULARIO DE CONTACTO -->
-      <div class="bg-white rounded-xl shadow-md p-6 sm:p-8 border border-slate-200">
-        <form id="contactForm" class="space-y-4">
-          <h2 class="text-xl font-bold text-primary mb-2">Envíenos su Consulta</h2>
-          <div>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required
-                   class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
+      <section class="panel">
+        <form id="contactForm" novalidate>
+          <h2>Envíenos su Consulta</h2>
+
+          <div class="field">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" aria-label="Nombre completo" autocomplete="name" required>
           </div>
-          <div>
-            <input type="email" id="email" name="email" placeholder="Correo electrónico" required
-                   class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
+          <div class="field">
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" aria-label="Correo electrónico" autocomplete="email" required>
           </div>
-          <div>
-            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono de contacto"
-                   class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none">
+          <div class="field">
+            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono de contacto" aria-label="Teléfono de contacto" autocomplete="tel">
           </div>
-          <div>
-            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Detalles de su consulta..." required
-                      class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:outline-none"></textarea>
+          <div class="field">
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Detalles de su consulta..." aria-label="Detalles de su consulta" required></textarea>
           </div>
-          <button type="submit" id="submitBtn" class="w-full bg-primary hover:bg-primaryLight text-white font-bold py-3 px-4 rounded-lg transition-colors shadow">
-            Enviar Mensaje
-          </button>
-          
-          <!-- CUADRO DE ESTADO -->
-          <div id="formStatus" class="p-4 mt-3 rounded-lg text-center text-sm font-bold bg-slate-100 text-slate-700 border border-slate-300">
-            Estado: Listo para enviar
+
+          <!-- Campo trampa anti-spam (invisible para las personas) -->
+          <div class="hp" aria-hidden="true">
+            <input type="text" id="web" name="web" tabindex="-1" autocomplete="off">
           </div>
+
+          <button type="submit" id="submitBtn" class="btn btn-primary">Enviar Mensaje</button>
+
+          <div id="formStatus" class="status" role="status" aria-live="polite"></div>
         </form>
-      </div>
+      </section>
 
     </div>
 
   </main>
 
-  <footer class="bg-primary text-white py-8 mt-auto border-t border-slate-700">
-    <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
-      <p class="text-slate-400 text-sm">
-        &copy; 2026 SELECON (Sevillana de Electrocomunicación S.L.) - Servicio Oficial Volvo Penta Industrial Sevilla. Todos los derechos reservados.
-      </p>
-      <p>
-        <a href="tel:954915887" class="text-volvoCyan font-bold text-sm hover:underline">Teléfono de asistencia: 954 91 58 87</a>
-      </p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 SELECON (Sevillana de Electrocomunicación S.L.) - Servicio Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+      <a href="tel:+34954915887" class="footer-phone">Teléfono de asistencia: 954 91 58 87</a>
     </div>
   </footer>
 
-  <!-- Script con Supabase y envíos individuales por FormSubmit -->
   <script>
     const SUPABASE_URL = 'https://naxvisgsqzqqxppaozbp.supabase.co';
     const SUPABASE_ANON_KEY = 'sb_publishable_1roH47k0JskCosWdbLufJw_cbmGK_It';
+
+    // Destinos de los avisos por correo (FormSubmit)
+    const DESTINOS_CORREO = [
+      'volvopentaindustriales@gmail.com',
+      'jmlobillo@gmail.com',
+      '6cad97455e288127aa11963139734be6',
+      'calidad@selecon.es'
+    ];
 
     let supabaseClient = null;
     try {
       if (window.supabase && SUPABASE_URL) {
         supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
       }
-    } catch(e) {
-      console.warn("Aviso al iniciar cliente Supabase:", e);
+    } catch (e) {
+      console.warn('Aviso al iniciar cliente Supabase:', e);
     }
 
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusDiv = document.getElementById('formStatus');
+
+    function setStatus(tipo, texto) {
+      statusDiv.className = 'status status-' + tipo;
+      statusDiv.textContent = texto;
+    }
+
+    function restaurarBoton() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar Mensaje';
+    }
+
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      
-      const submitBtn = document.getElementById('submitBtn');
-      const statusDiv = document.getElementById('formStatus');
-      
+
+      // Si el campo trampa tiene contenido, es un robot: no hacemos nada
+      if (document.getElementById('web').value) return;
+
       const nombre = document.getElementById('nombre').value.trim();
       const email = document.getElementById('email').value.trim();
       const telefono = document.getElementById('telefono').value.trim();
       const mensaje = document.getElementById('mensaje').value.trim();
 
+      if (!nombre || !email || !mensaje) {
+        setStatus('warn', 'Por favor, rellene nombre, correo y consulta.');
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'Enviando...';
-
-      statusDiv.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-blue-100 text-blue-800 border border-blue-300';
-      statusDiv.textContent = '⏳ Guardando en Supabase...';
+      setStatus('info', '⏳ Enviando su consulta...');
 
       // 1. Guardar en Supabase
+      let guardado = false;
       if (supabaseClient) {
-        const { data, error } = await supabaseClient
+        const { error } = await supabaseClient
           .from('Contactos')
           .insert([{ nombre, email, telefono, mensaje }]);
 
         if (error) {
-          console.error("Error de Supabase:", error);
-          statusDiv.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-red-100 text-red-800 border border-red-300';
-          statusDiv.textContent = '❌ Error de Supabase: ' + error.message;
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Enviar Mensaje';
+          console.error('Error de Supabase:', error);
+          setStatus('error', '❌ No se pudo enviar su consulta. Inténtelo de nuevo o llámenos al 954 91 58 87.');
+          restaurarBoton();
           return;
         }
+        guardado = true;
       }
 
-      // 2. Enviar correos de uno en uno
-      const payload = JSON.stringify({ 
-        nombre, 
-        email, 
-        telefono, 
-        mensaje, 
-        _subject: 'Nuevo contacto SELECON' 
-      });
+      // 2. Avisos por correo (todos a la vez; se comprueba si cada uno llegó bien)
+      const payload = JSON.stringify({ nombre, email, telefono, mensaje, _subject: 'Nuevo contacto SELECON' });
+      const headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' };
 
-      const headers = { 
-        'Content-Type': 'application/json', 
-        'Accept': 'application/json' 
-      };
+      const resultados = await Promise.allSettled(
+        DESTINOS_CORREO.map(function (destino) {
+          return fetch('https://formsubmit.co/ajax/' + destino, { method: 'POST', headers: headers, body: payload })
+            .then(function (r) {
+              if (!r.ok) throw new Error('Respuesta ' + r.status);
+              return r;
+            });
+        })
+      );
+      const enviados = resultados.filter(function (r) { return r.status === 'fulfilled'; }).length;
+      console.info('Avisos por correo enviados: ' + enviados + ' de ' + DESTINOS_CORREO.length);
 
-      statusDiv.textContent = '⏳ Enviando correos electrónicos...';
-
-      try {
-        // Primer envío: volvopentaindustriales@gmail.com
-        await fetch('https://formsubmit.co/ajax/volvopentaindustriales@gmail.com', {
-          method: 'POST',
-          headers: headers,
-          body: payload
-        });
-
-        // Segundo envío: jmlobillo@gmail.com
-        await fetch('https://formsubmit.co/ajax/jmlobillo@gmail.com', {
-          method: 'POST',
-          headers: headers,
-          body: payload
-        });
-
-        // Tercer envío: volvopentaindustrial@selecon.es
-        await fetch('https://formsubmit.co/ajax/6cad97455e288127aa11963139734be6', {
-          method: 'POST',
-          headers: headers,
-          body: payload
-        });
-
-        //  Y un cuarto   calidad@selecon.es
-
-        // Tercer envío: volvopentaindustrial@selecon.es
-        await fetch('https://formsubmit.co/ajax/calidad@selecon.es', {
-          method: 'POST',
-          headers: headers,
-          body: payload
-        });
-      } catch(e) {
-        console.warn("Aviso FormSubmit:", e);
+      // 3. Resultado para el visitante
+      if (enviados > 0) {
+        setStatus('ok', '✅ ¡Gracias! Hemos recibido su consulta y le responderemos lo antes posible.');
+        form.reset();
+      } else if (guardado) {
+        setStatus('warn', '✅ Su consulta ha quedado registrada. Si es urgente, llámenos al 954 91 58 87.');
+        form.reset();
+      } else {
+        setStatus('error', '❌ No se pudo enviar su consulta. Inténtelo de nuevo o llámenos al 954 91 58 87.');
       }
-
-      // ÉXITO
-      statusDiv.className = 'p-4 mt-3 rounded-lg text-center text-sm font-bold bg-green-100 text-green-800 border border-green-300';
-      statusDiv.textContent = '✅ ¡Guardado en Supabase y enviado por correo!';
-      document.getElementById('contactForm').reset();
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Enviar Mensaje';
+      restaurarBoton();
     });
   </script>
 </body>

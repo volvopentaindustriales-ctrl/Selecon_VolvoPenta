@@ -223,3 +223,55 @@ main { flex: 1; width: 100%; }
 @media (min-width: 640px) {
   .site-footer .container { flex-direction: row; justify-content: center; text-align: left; }
 }
+
+/* ---------- Página de contacto ---------- */
+.panel.full { max-width: none; margin: 0; }
+.panel h2 + p { margin-top: 0; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.figure {
+  background: #fff; border: 1px solid var(--border); border-radius: .75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1); padding: 1rem;
+  display: flex; flex-direction: column; align-items: center;
+}
+.figure img { width: 100%; height: 16rem; object-fit: cover; border-radius: .5rem; border: 1px solid var(--border); }
+.figure img.contain { object-fit: contain; background: #F8FAFC; padding: .5rem; }
+.figure figcaption { font-size: .9rem; color: #64748B; font-weight: 500; text-align: center; margin-top: .75rem; }
+
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.contact-grid .panel { max-width: none; margin: 0; }
+@media (min-width: 768px) { .grid-2, .contact-grid { grid-template-columns: 1fr 1fr; } }
+
+.contact-data { margin-top: 1rem; font-size: .9rem; }
+.contact-data p { margin-bottom: .25rem; }
+.map-box { margin-top: 1.5rem; height: 14rem; border-radius: .5rem; overflow: hidden; border: 1px solid #CBD5E1; }
+.map-box iframe { width: 100%; height: 100%; border: 0; }
+
+.panel a.btn { color: #fff; text-decoration: none; }
+.panel a.btn:hover { text-decoration: none; }
+.btn-green { background: #16A34A; display: block; margin-top: 1rem; }
+.btn-green:hover { background: #15803D; }
+
+.field { margin-bottom: 1rem; }
+.field input, .field textarea {
+  width: 100%; padding: .75rem; border: 1px solid #CBD5E1; border-radius: .5rem;
+  font-size: .95rem; font-family: inherit; background: #fff; color: var(--text);
+}
+.field input:focus, .field textarea:focus { outline: 2px solid var(--primary); }
+button.btn { border: 0; cursor: pointer; font-size: 1rem; font-family: inherit; }
+.btn-primary { background: var(--primary); width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,.15); }
+.btn-primary:hover { background: #003F6B; }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.status {
+  margin-top: 1rem; padding: 1rem; border-radius: .5rem; text-align: center;
+  font-size: .9rem; font-weight: 700; border: 1px solid #CBD5E1; background: #F1F5F9; color: #334155;
+}
+.status:empty { display: none; }
+.status-info  { background: #DBEAFE; color: #1E40AF; border-color: #93C5FD; }
+.status-ok    { background: #DCFCE7; color: #166534; border-color: #86EFAC; }
+.status-warn  { background: #FEF9C3; color: #854D0E; border-color: #FDE047; }
+.status-error { background: #FEE2E2; color: #991B1B; border-color: #FCA5A5; }
+
+/* Campo trampa anti-spam: los humanos no lo ven */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
