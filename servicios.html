@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios Industriales - SELECON Volvo Penta Sevilla</title>
+  <title>Servicios Técnicos Volvo Penta Industrial en Sevilla | SELECON</title>
+  <meta name="description" content="Mantenimiento preventivo y correctivo de motores industriales Volvo Penta en Sevilla y Andalucía: grupos electrógenos y maquinaria industrial, con diagnosis VODIA.">
+  <link rel="canonical" href="https://volvopentaindustriales-ctrl.github.io/Selecon_VolvoPenta/servicios.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <style>
     :root { 
       --primary: #002B49; 
@@ -15,20 +18,22 @@
       --border-color: #CBD5E1;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    html, body { overflow-x: hidden; }
     body { background-color: var(--bg); color: var(--text); line-height: 1.7; }
+    img { max-width: 100%; }
 
     /* Barra superior */
-    .top-bar { background: var(--primary-dark); color: #94A3B8; padding: 0.6rem 2rem; font-size: 0.9rem; display: flex; justify-content: flex-end; gap: 2.5rem; align-items: center; }
+    .top-bar { background: var(--primary-dark); color: #94A3B8; padding: 0.6rem 2rem; font-size: 0.9rem; display: flex; justify-content: flex-end; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
     .top-bar a { color: #38BDF8; text-decoration: none; font-weight: 700; }
     .top-bar a:hover { text-decoration: underline; }
     .top-bar span { color: #E2E8F0; font-weight: 500; }
 
     /* Cabecera */
-    header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 1000; }
+    header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 1000; }
     .logo-area h2 { font-size: 1.3rem; font-weight: 800; color: #FFFFFF; }
     .logo-area span { font-size: 0.75rem; color: #38BDF8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-    nav { display: flex; gap: 1.5rem; align-items: center; }
+    nav { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
     nav a { color: #E2E8F0; text-decoration: none; font-weight: 500; transition: all 0.2s; font-size: 0.95rem; padding: 0.4rem 0.8rem; border-radius: 4px; }
     nav a:hover, nav a.active { color: white; background: rgba(255,255,255,0.1); }
 
@@ -48,7 +53,7 @@
     /* Primera imagen (Cuadro de trabajo) */
     .service-card:nth-child(odd) img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.12); border: 2px solid #E2E8F0; }
     
-    /* Segunda imagen (img3) modificada con contain y fondo para que se vea COMPLETA sin recortes */
+    /* Segunda imagen (img3): contain para que se vea completa */
     .service-card:nth-child(even) img { width: 100%; height: 300px; object-fit: contain; background-color: #F8FAFC; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.12); border: 2px solid #E2E8F0; padding: 0.5rem; }
     
     .service-info h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.8rem; font-weight: 700; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 0.3rem; }
@@ -63,7 +68,7 @@
     /* CTA Box */
     .cta-box { background: linear-gradient(135deg, var(--primary) 0%, #004070 100%); color: white; border-radius: 16px; padding: 3.5rem 2rem; text-align: center; margin-top: 4rem; box-shadow: 0 12px 30px rgba(0,43,73,0.2); }
     .cta-box h2 { margin-bottom: 0.8rem; font-size: 2rem; font-weight: 700; }
-    .cta-box p { color: #CBD5E1; margin-bottom: 2rem; font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
+    .cta-box p { color: #CBD5E1; margin-bottom: 2rem; font-size: 1.1rem; max-width: 650px; margin: 0 auto 2rem auto; }
     
     .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
     .btn { background: var(--accent); color: white; padding: 0.9rem 2rem; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.2s; }
@@ -73,6 +78,34 @@
 
     footer { background: var(--primary-dark); color: #94A3B8; text-align: center; padding: 3rem 2rem; margin-top: 5rem; font-size: 0.9rem; border-top: 4px solid var(--accent); }
     footer .footer-phone { color: #38BDF8; font-weight: bold; margin-top: 0.5rem; display: block; }
+
+    /* ===== MÓVIL Y TABLET ===== */
+    @media (max-width: 768px) {
+      .top-bar { justify-content: center; text-align: center; gap: 0.3rem 1.5rem; padding: 0.6rem 1rem; font-size: 0.85rem; }
+
+      header { flex-direction: column; justify-content: center; text-align: center; padding: 0.8rem 1rem; }
+      nav { justify-content: center; gap: 0.3rem; }
+      nav a { padding: 0.4rem 0.6rem; font-size: 0.9rem; }
+
+      .hero-banner { padding: 2.5rem 1.2rem; }
+      .hero-banner h1 { font-size: 1.7rem; }
+      .hero-banner p { font-size: 1rem; }
+
+      .container { padding: 0 1rem; margin-top: -1.5rem; }
+
+      .service-card,
+      .service-card:nth-child(even) { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+      .service-card:nth-child(even) img { order: 0; }
+      .service-card:nth-child(odd) img,
+      .service-card:nth-child(even) img { height: 220px; }
+      .service-info h2 { font-size: 1.4rem; }
+
+      .cta-box { padding: 2.5rem 1.2rem; }
+      .cta-box h2 { font-size: 1.5rem; }
+      .btn, .btn-sec { width: 100%; text-align: center; }
+
+      footer { padding: 2rem 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -98,8 +131,8 @@
   </header>
 
   <section class="hero-banner">
-    <h1>Servicios Técnicos Especializados</h1>
-    <p>Soluciones de ingeniería, mantenimiento integral y asistencia oficial para motores e instalaciones industriales en Andalucía.</p>
+    <h1>Servicios técnicos para motores industriales Volvo Penta en Sevilla</h1>
+    <p>Soluciones de ingeniería, mantenimiento integral y asistencia oficial para motores e instalaciones industriales en Sevilla y toda Andalucía.</p>
   </section>
 
   <main class="container">
@@ -118,12 +151,12 @@
           Ver Sección Oficial Volvo Penta &nearr;
         </a>
       </div>
-      <img src="imagenes/cuadro de trabajo.png" alt="Cuadro de trabajo y mantenimiento de grupos electrógenos SELECON">
+      <img src="imagenes/cuadro de trabajo.png" alt="Cuadro de trabajo y mantenimiento de grupos electrógenos SELECON" loading="lazy">
     </div>
 
-    <!-- Sección Off-Road (Con la imagen img3 ajustada para verse completa) -->
+    <!-- Sección Off-Road -->
     <div class="service-card">
-      <img src="imagenes/img3.jpg" alt="Asistencia técnica en maquinaria industrial Off-Road Volvo Penta">
+      <img src="imagenes/img3.jpg" alt="Asistencia técnica en maquinaria industrial Off-Road Volvo Penta" loading="lazy">
       <div class="service-info">
         <h2>Maquinaria Industrial (Off-Road)</h2>
         <p>Asistencia técnica integral para maquinaria de obras públicas, equipos de minería, motobombas y aplicaciones móviles industriales.</p>
