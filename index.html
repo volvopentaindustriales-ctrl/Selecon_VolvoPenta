@@ -28,3 +28,174 @@
             accentHover: '#B9151B',
             volvoCyan: '#38BDF8'
           },
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #F1F5F9; }
+  </style>
+
+  <!-- Datos estructurados: ayudan a Google a reconocer el negocio local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SELECON",
+    "legalName": "Sevillana de Electrocomunicación S.L.",
+    "description": "Servicio técnico de motores industriales Volvo Penta: mantenimiento, diagnosis VODIA y recambios originales.",
+    "url": "https://volvopentaindustriales-ctrl.github.io/Selecon_VolvoPenta/",
+    "telephone": "+34954915887",
+    "email": "calidad@selecon.es",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Polígono Macarena, Calle Química 19",
+      "postalCode": "41015",
+      "addressLocality": "Sevilla",
+      "addressRegion": "Sevilla",
+      "addressCountry": "ES"
+    },
+    "areaServed": "Andalucía"
+  }
+  </script>
+</head>
+<body class="text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <header class="bg-primary shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center py-4">
+
+        <!-- Logotipos corporativos (imágenes del propio repositorio) -->
+        <div class="flex items-center space-x-4 mb-4 md:mb-0">
+          <div class="bg-white rounded-md px-4 py-2 h-16 flex items-center justify-center shadow-inner">
+            <img src="selecon.jpg" alt="SELECON" class="h-10 w-auto object-contain">
+          </div>
+          <span class="text-white/30 text-2xl font-light">|</span>
+          <div class="bg-white rounded-md px-4 py-2 h-16 flex items-center justify-center shadow-inner">
+            <img src="volvop1.jpg" alt="Volvo Penta" class="h-10 w-auto object-contain">
+          </div>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm sm:text-base font-medium">
+          <a href="index.html" class="text-volvoCyan font-bold border-b-2 border-volvoCyan py-2">Inicio</a>
+          <a href="servicios.html" class="text-white hover:text-volvoCyan transition-colors py-2">Servicios</a>
+          <a href="vodia.html" class="text-white hover:text-volvoCyan transition-colors py-2">VODIA</a>
+          <a href="accesorios.html" class="text-white hover:text-volvoCyan transition-colors py-2">Accesorios</a>
+          <a href="contacto.html" class="text-white hover:text-volvoCyan transition-colors py-2">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative bg-primary text-white py-20 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <!-- Si esta foto no es la que quieres de fondo, cambia foto.png por otra de tu repositorio -->
+      <img src="foto.png" alt="Servicio técnico de motores industriales Volvo Penta en Sevilla" class="w-full h-full object-cover">
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+      <div class="max-w-3xl space-y-6">
+        <span class="bg-volvoCyan/20 text-volvoCyan px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase border border-volvoCyan/30">
+          Servicio Oficial Autorizado
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+          Servicio técnico de motores industriales <span class="text-volvoCyan">Volvo Penta</span> en Sevilla
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed">
+          Especialistas en mantenimiento preventivo, diagnóstico avanzado con VODIA y suministro de recambios originales en Sevilla y toda Andalucía.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="contacto.html" class="bg-accent hover:bg-accentHover text-white font-bold py-3.5 px-8 rounded-lg text-center transition-colors shadow-lg">
+            Solicitar Servicio Técnico
+          </a>
+          <a href="servicios.html" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3.5 px-8 rounded-lg text-center transition-colors backdrop-blur border border-white/20">
+            Ver Servicios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full space-y-16">
+
+    <!-- Texto de presentación -->
+    <section class="text-center max-w-3xl mx-auto space-y-4">
+      <h2 class="text-3xl font-extrabold text-primary">Excelencia y Profesionalidad</h2>
+      <p class="text-slate-600 leading-relaxed">
+        En SELECON somos especialistas en motores y sistemas industriales Volvo Penta.
+        Ofrecemos servicio técnico en Sevilla y toda Andalucía: mantenimiento preventivo,
+        diagnosis electrónica con VODIA y suministro de recambios originales para que sus
+        instalaciones y grupos electrógenos estén siempre operativos.
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        Trabajamos con herramientas y manuales oficiales de fábrica, para que cada
+        intervención se haga con los estándares del fabricante.
+      </p>
+    </section>
+
+    <!-- Servicios -->
+    <section>
+      <h2 class="text-2xl font-extrabold text-primary text-center mb-8">Qué hacemos por su instalación</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-md p-8 border border-slate-200 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 bg-volvoCyan/20 text-volvoCyan rounded-lg flex items-center justify-center font-bold text-xl mb-6" aria-hidden="true">⚙️</div>
+          <h3 class="text-xl font-bold text-primary mb-3">Mantenimiento preventivo de motores Volvo Penta</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Revisiones periódicas y planes de mantenimiento para detectar el desgaste antes de que cause una avería y reducir paradas imprevistas. Intervenciones certificadas por Volvo Penta con herramientas y manuales oficiales de fábrica.</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-8 border border-slate-200 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 bg-volvoCyan/20 text-volvoCyan rounded-lg flex items-center justify-center font-bold text-xl mb-6" aria-hidden="true">💻</div>
+          <h3 class="text-xl font-bold text-primary mb-3">Diagnosis electrónica con VODIA</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Con el sistema VODIA localizamos de forma rápida y precisa las incidencias del motor, leyendo la información de su unidad electrónica.</p>
+          <a href="vodia.html" class="inline-block mt-4 text-sm font-semibold text-accent hover:text-accentHover">Más sobre VODIA →</a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-8 border border-slate-200 hover:-translate-y-1 transition-transform">
+          <div class="w-12 h-12 bg-volvoCyan/20 text-volvoCyan rounded-lg flex items-center justify-center font-bold text-xl mb-6" aria-hidden="true">📦</div>
+          <h3 class="text-xl font-bold text-primary mb-3">Recambios y lubricantes originales Volvo Penta</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Amplio stock local de repuestos y lubricantes originales para asegurar la longevidad de sus equipos.</p>
+          <a href="accesorios.html" class="inline-block mt-4 text-sm font-semibold text-accent hover:text-accentHover">Ver recambios y accesorios →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por qué elegirnos -->
+    <section class="bg-white rounded-xl shadow-md p-8 border border-slate-200 max-w-3xl mx-auto w-full">
+      <h2 class="text-2xl font-extrabold text-primary mb-4">¿Por qué elegir SELECON?</h2>
+      <ul class="space-y-2 text-slate-600 list-disc list-inside">
+        <li>Servicio Volvo Penta Industrial en Sevilla.</li>
+        <li>Técnicos con herramientas y manuales oficiales de fábrica.</li>
+        <li>Diagnóstico avanzado con VODIA.</li>
+        <li>Recambios originales con stock local.</li>
+      </ul>
+    </section>
+
+    <!-- Contacto -->
+    <section class="bg-white rounded-xl shadow-md p-8 border border-slate-200 max-w-3xl mx-auto w-full">
+      <h2 class="text-2xl font-extrabold text-primary mb-4">Contacto</h2>
+      <p class="text-slate-600 leading-relaxed">
+        SELECON — Polígono Macarena, Calle Química nº 19, 41015 Sevilla<br>
+        Teléfono: <a href="tel:+34954915887" class="text-accent font-semibold">954 91 58 87</a><br>
+        Email: <a href="mailto:calidad@selecon.es" class="text-accent font-semibold">calidad@selecon.es</a><br>
+        Horario: de 8:00 a 19:00 h
+      </p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Calle+Qu%C3%ADmica+19+41015+Sevilla" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-sm font-semibold text-accent hover:text-accentHover">Ver en Google Maps →</a>
+    </section>
+
+  </main>
+
+  <!-- Footer con firma transparente -->
+  <footer class="bg-primary text-white py-8 mt-auto border-t border-slate-700">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+      <p class="text-slate-400 text-sm">
+        &copy; 2026 SELECON - Servicio Volvo Penta Industrial Sevilla. Todos los derechos reservados.
+      </p>
+      <img src="firma_transparente_blanca.png" alt="Firma SELECON" loading="lazy" class="h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+    </div>
+  </footer>
+
+</body>
+</html>
