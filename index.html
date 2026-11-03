@@ -55,27 +55,26 @@
     </div>
   </div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logos">
-        <div class="logo-box"><img src="selecon.jpg" alt="SELECON"></div>
-        <span class="logo-sep">|</span>
-        <div class="logo-box"><img src="volvop1.jpg" alt="Volvo Penta"></div>
-      </div>
+    
+  
+<header class="site-header">
+  <div class="container header-inner" id="menu-container">
+    <!-- El menú se cargará aquí automáticamente -->
+  </div>
+</header>
 
-<nav class="main-nav">
-  <a href="index.html" class="active">Inicio</a>
-  <a href="servicios.html">Servicios</a>
-  <a href="vodia.html">VODIA</a>
-  <a href="accesorios.html">Accesorios</a>
-  <a href="blog/">Blog / Noticias</a>
-  <a href="contacto.html">Contacto</a>
-</nav>
+<!-- Script que busca el menú y lo pinta -->
+<script>
+  fetch('menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+    });
+</script>
 
-      
-    </div>
-  </header>
 
+
+  
   <section class="hero">
     <div class="hero-bg">
       <!-- Si esta foto no es la que quieres de fondo, cambia foto.png por otra de tu repositorio -->
