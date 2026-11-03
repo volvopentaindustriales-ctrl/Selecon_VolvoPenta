@@ -3,52 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accesorios - SELECON Volvo Penta Industrial</title>
+  <title>Accesorios y Recambios Volvo Penta Industrial | SELECON Sevilla</title>
+  <meta name="description" content="Suministro y stock local de recambios, filtros y accesorios originales Volvo Penta para instalaciones industriales en Sevilla y Andalucía.">
+  <link rel="canonical" href="https://volvopentaindustriales-ctrl.github.io/Selecon_VolvoPenta/accesorios.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph / Meta etiquetas para redes sociales y WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Accesorios y Recambios Volvo Penta Industrial | SELECON Sevilla">
+  <meta property="og:description" content="Suministro y stock local de recambios, filtros y accesorios originales Volvo Penta para instalaciones industriales en Sevilla y Andalucía.">
+  <meta property="og:url" content="https://volvopentaindustriales-ctrl.github.io/Selecon_VolvoPenta/accesorios.html">
+
+  <!-- Estilos globales del sitio -->
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- Librería para la gráfica de disponibilidad de stock -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <style>
-    :root { --primary: #002B49; --accent: #D71920; --bg: #F8FAFC; --text: #1E293B; }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-
-    header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
-    nav a.active { color: #38BDF8; font-weight: bold; }
-
-    .container { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
+    /* Estilos específicos para la gráfica y bloque de tienda */
     .chart-box { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-top: 2rem; }
-
-    .official-shop-box { background: var(--primary); color: white; border-radius: 12px; padding: 2rem; margin-top: 2.5rem; text-align: center; }
-    .btn { background: var(--accent); color: white; padding: 0.8rem 1.6rem; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; margin-top: 1rem; }
-
-    footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
+    .official-shop-box { background: var(--color-primary, #002B49); color: white; border-radius: 12px; padding: 2rem; margin-top: 2.5rem; text-align: center; }
+    .btn-accent { background: var(--color-accent, #D71920); color: white; padding: 0.8rem 1.6rem; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; margin-top: 1rem; }
   </style>
 </head>
 <body>
 
-  <header>
-    <h2>SELECON | Volvo Penta Industrial</h2>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="vodia.html">VODIA</a>
-      <a href="accesorios.html" class="active">Accesorios</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner" id="menu-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <!-- El menú se cargará aquí automáticamente -->
+    </div>
   </header>
 
-  <main class="container">
-    <h1 style="color: var(--primary);">Accesorios y Recambios Industriales</h1>
+  <!-- Script que carga el menú unificado desde menu.html -->
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+      });
+  </script>
+
+  <main class="container stack" style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem;">
+    <h1 style="color: var(--color-primary, #002B49);">Accesorios y Recambios Industriales</h1>
     <p>Stock local de repuestos y filtros originales para instalaciones industriales en Sevilla.</p>
 
     <div class="chart-box">
-      <h3 style="color: var(--primary); margin-bottom: 1rem; text-align: center;">Disponibilidad de Recambios en Almacén</h3>
+      <h3 style="color: var(--color-primary, #002B49); margin-bottom: 1rem; text-align: center;">Disponibilidad de Recambios en Almacén</h3>
       <canvas id="stockChart"></canvas>
     </div>
 
     <div class="official-shop-box">
-      <h2>Catálogo de Piezas Oficiales Volvo Penta</h2>
-      <p>Consulte la información detallada sobre repuestos originales y mantenimiento en el portal de soluciones industriales de Volvo Penta España.</p>
-      <a href="https://www.volvopenta.com/es-es/industrial/" target="_blank" rel="noopener noreferrer" class="btn">
+      <h2 style="color: white;">Catálogo de Piezas Oficiales Volvo Penta</h2>
+      <p style="margin-top: 0.5rem;">Consulte la información detallada sobre repuestos originales y mantenimiento en el portal de soluciones industriales de Volvo Penta España.</p>
+      <a href="https://www.volvopenta.com/es-es/industrial/" target="_blank" rel="noopener noreferrer" class="btn-accent">
         Sección Oficial: Volvo Penta Industrial &nearr;
       </a>
     </div>
@@ -74,8 +82,10 @@
     });
   </script>
 
-  <footer>
-    <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
 </body>
