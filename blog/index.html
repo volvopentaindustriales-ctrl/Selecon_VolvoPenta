@@ -31,17 +31,29 @@
     <div id="lista-posts" style="margin-top: 1.5rem;">Cargando artículos...</div>
   </main>
 
-  <script>
-    fetch('posts.json')
+    <script>
+    // Intentamos cargar posts.json de la carpeta actual o de la ruta completa
+    const jsonPath = window.location.pathname.endsWith('/') 
+      ? 'posts.json' 
+      : './posts.json';
+
+    fetch(jsonPath)
       .then(response => {
         if (!response.ok) {
-          throw new Error('No se pudo cargar el archivo posts.json (Error ' + response.status + ')');
+          // Si falla, intentamos la ruta absoluta por si acaso
+          return fetch('/Selecon_VolvoPenta/blog/posts.json');
+        }
+        return response;
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se encuentra el archivo posts.json (Error ' + response.status + ')');
         }
         return response.json();
       })
       .then(posts => {
         const contenedor = document.getElementById('lista-posts');
-        contenedor.innerHTML = ''; // Limpiar mensaje de carga
+        contenedor.innerHTML = '';
         posts.forEach(post => {
           contenedor.innerHTML += `
             <article class="panel" style="margin-bottom: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
@@ -55,9 +67,9 @@
       })
       .catch(error => {
         document.getElementById('lista-posts').innerHTML = '<p style="color: red; font-weight: bold;">Error al cargar las noticias: ' + error.message + '</p>';
-        console.error('Error:', error);
       });
   </script>
+
 
   <footer class="site-footer" style="margin-top: 3rem;">
     <div class="container" style="text-align: center;">
