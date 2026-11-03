@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticia | SELECON Volvo Penta</title>
+  <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <div>Soporte Técnico: <a href="tel:+34954915887">954 91 58 87</a></div>
+      <div>Contacto: <span>calidad@selecon.es</span></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner" id="menu-container"></div>
+  </header>
+  <script>
+    fetch('../menu.html').then(r => r.text()).then(data => {
+      document.getElementById('menu-container').innerHTML = data.replace(/src="/g, 'src="../').replace(/href="(?!(http|https|\/))/g, 'href="../');
+    });
+  </script>
+
+  <main class="container stack" style="margin-top: 2rem;">
+    <article class="intro" id="detalle-post">
+      <a href="index.html" style="color: var(--color-primary, #004b87); text-decoration: none; font-weight: bold;">← Volver al blog</a>
+      <h1 id="post-titulo" style="margin-top: 1rem;">Cargando noticia...</h1>
+      <p><em id="post-meta"></em></p>
+      
+      <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #ccc;">
+
+      <div id="post-contenido"></div>
+    </article>
+
+    <section class="panel" style="margin-top: 2rem;">
+      <h2>¿Necesita asistencia técnica oficial?</h2>
+      <p>En SELECON prestamos servicio técnico oficial Volvo Penta en toda Andalucía.</p>
+      <a href="../contacto.html" class="btn" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: var(--color-primary, #002B49); color: #fff; text-decoration: none; border-radius: 4px;">Solicitar asistencia técnica</a>
+    </section>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+
+    fetch('posts.json')
+      .then(response => response.json())
+      .then(posts => {
+        const post = posts.find(p => p.id === postId);
+        if (post) {
+          document.title = `${post.titulo} | SELECON`;
+          document.getElementById('post-titulo').innerText = post.titulo;
+          document.getElementById('post-meta').innerText = `Publicado el ${post.fecha} por ${post.autor}`;
+          document.getElementById('post-contenido').innerHTML = post.contenido;
+        } else {
+          document.getElementById('detalle-post').innerHTML = '<h2>Artículo no encontrado</h2><p><a href="index.html">Volver a la lista de noticias</a></p>';
+        }
+      });
+  </script>
+
+  <footer class="site-footer" style="margin-top: 3rem;">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 SELECON - Servicio Volvo Penta Industrial Sevilla.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
 
