@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog y Noticias Volvo Penta | SELECON Sevilla</title>
-  <meta name="description" content="Artículos técnicos, consejos de mantenimiento para motores Volvo Penta y novedades de SELECON en Sevilla.">
-  <link rel="canonical" href="https://volvopentaindustriales-ctrl.github.io/Selecon_VolvoPenta/blog/">
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-
+  <title>Blog y Noticias | SELECON Volvo Penta</title>
   <link rel="stylesheet" href="../estilos.css">
 </head>
 <body>
@@ -20,58 +16,44 @@
   </div>
 
   <header class="site-header">
-  <div class="container header-inner" id="menu-container">
-    <!-- El menú se carga automáticamente -->
-  </div>
-</header>
-
-<script>
-  fetch('../menu.html')
-    .then(response => response.text())
-    .then(data => {
-      let adjustedData = data.replace(/src="/g, 'src="../')
-                             .replace(/href="(?!(http|https|\/))/g, 'href="../');
-      document.getElementById('menu-container').innerHTML = adjustedData;
+    <div class="container header-inner" id="menu-container"></div>
+  </header>
+  <script>
+    fetch('../menu.html').then(r => r.text()).then(data => {
+      document.getElementById('menu-container').innerHTML = data.replace(/src="/g, 'src="../').replace(/href="(?!(http|https|\/))/g, 'href="../');
     });
-</script>
-
+  </script>
 
   <main class="container stack" style="margin-top: 2rem;">
+    <h1>Blog & Noticias SELECON</h1>
+    <p>Actualidad técnica, consejos de mantenimiento y novedades Volvo Penta Industrial.</p>
 
-    <section class="intro">
-      <h2>Noticias y Consejos Técnicos</h2>
-      <p>Espacio dedicado a resolver dudas frecuentes sobre motores industriales Volvo Penta, mantenimiento de grupos electrógenos y novedades del sector.</p>
-    </section>
-
-    <section>
-      <div class="cards">
-
-        <div class="card">
-          <div class="icon" aria-hidden="true">💡</div>
-          <h3>Mantenimiento de grupos electrógenos: Claves preventivas</h3>
-          <p>Descubre las revisiones periódicas imprescindibles para evitar paradas imprevistas en instalaciones industriales.</p>
-          <a href="mantenimiento-grupos-electrogenos.html" class="card-link">Leer artículo completo →</a>
-        </div>
-
-        <div class="card">
-          <div class="icon" aria-hidden="true">💻</div>
-          <h3>Ventajas de la diagnosis VODIA en motores industriales</h3>
-          <p>Cómo la herramienta oficial de diagnóstico permite detectar averías electrónicas antes de que causen daños graves.</p>
-          <a href="ventajas-diagnosis-vodia.html" class="card-link">Leer artículo completo →</a>
-        </div>
-
-      </div>
-    </section>
-
+    <div id="lista-posts" style="margin-top: 1.5rem;"></div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 SELECON - Servicio Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
-      <img src="../firma_transparente_blanca.png" alt="Firma SELECON" loading="lazy">
+  <script>
+    fetch('posts.json')
+      .then(response => response.json())
+      .then(posts => {
+        const contenedor = document.getElementById('lista-posts');
+        posts.forEach(post => {
+          contenedor.innerHTML += `
+            <article class="panel" style="margin-bottom: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <h2 style="margin-bottom: 0.5rem;"><a href="articulo.html?id=${post.id}" style="color: var(--color-primary, #002B49); text-decoration: none;">${post.titulo}</a></h2>
+              <p style="font-size: 0.9rem; color: #666;"><em>Publicado el ${post.fecha} por ${post.autor}</em></p>
+              <p style="margin-top: 0.8rem;">${post.extracto}</p>
+              <a href="articulo.html?id=${post.id}" class="btn" style="margin-top: 1rem; display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary, #002B49); color: #fff; text-decoration: none; border-radius: 4px;">Leer artículo completo &rarr;</a>
+            </article>
+          `;
+        });
+      });
+  </script>
+
+  <footer class="site-footer" style="margin-top: 3rem;">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 SELECON - Servicio Volvo Penta Industrial Sevilla.</p>
     </div>
   </footer>
 
 </body>
 </html>
-
