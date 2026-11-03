@@ -24,16 +24,24 @@
 </head>
 <body>
 
-  <header>
-    <h2>SELECON | Volvo Penta Industrial</h2>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="vodia.html" class="active">VODIA</a>
-      <a href="accesorios.html">Accesorios</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </header>
+
+
+<header class="site-header">
+  <div class="container header-inner" id="menu-container">
+    <!-- El menú se cargará aquí automáticamente -->
+  </div>
+</header>
+
+<!-- Script que busca el menú y lo pinta -->
+<script>
+  fetch('menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+    });
+</script>
+
+  
 
   <main class="container">
     <div class="hero-box">
