@@ -1,1 +1,19 @@
+[
+  {
+    "id": "mantenimiento-grupos-electrogenos",
+    "titulo": "Mantenimiento de grupos electrógenos: Claves preventivas",
+    "fecha": "23 de Febrero de 2026",
+    "autor": "Servicio Técnico SELECON",
+    "extracto": "Consejos y revisiones periódicas imprescindibles para garantizar la fiabilidad de tus grupos electrógenos Volvo Penta.",
+    "contenido": "<p>Un grupo electrógeno es el corazón de la continuidad operativa en cualquier instalación industrial. Cuando falla el suministro eléctrico principal, la respuesta debe ser inmediata y segura.</p><h3 style='margin-top: 1.5rem;'>Puntos clave de la revisión preventiva</h3><ul><li><strong>Comprobación de fluidos y filtros:</strong> Sustitución de aceite de motor y filtros originales Volvo Penta según las horas de trabajo.</li><li><strong>Inspección del sistema de combustible:</strong> Control de posibles fugas, purga de agua en el prefiltro y estado de los inyectores.</li><li><strong>Diagnóstico electrónico VODIA:</strong> Lectura de parámetros en tiempo real para verificar que la centralita no registra fallos latentes.</li><li><strong>Estado de las baterías y circuito de arranque:</strong> Revisión del sistema de carga y limpieza de bornes para asegurar el arranque instantáneo.</li></ul><p style='margin-top: 1.5rem;'>Un mantenimiento programado reduce drásticamente el riesgo de averías graves y prolonga la vida útil de sus equipos.</p>"
+  },
+  {
+    "id": "novedades-volvo-penta",
+    "titulo": "Últimas novedades industriales de Volvo Penta",
+    "fecha": "3 de Noviembre de 2026",
+    "autor": "Servicio Técnico SELECON",
+    "extracto": "Noticias actualizadas y contenido multimedia sobre los nuevos avances en motores y generación.",
+    "contenido": "<p>Compartimos las últimas actualizaciones oficiales de Volvo Penta sobre soluciones de energía industrial y sostenibilidad.</p><p>Puedes seguir el debate técnico completo en nuestra página de <a href='https://www.linkedin.com' target='_blank' rel='noopener'>LinkedIn</a>.</p><p>Te dejamos a continuación el vídeo oficial explicativo:</p><iframe width='100%' height='315' src='https://www.youtube.com/embed/dQw4w9WgXcQ' frameborder='0' allowfullscreen style='border-radius: 8px; margin-top: 1rem; width: 100%;'></iframe>"
+  }
+]
 
