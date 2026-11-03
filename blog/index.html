@@ -28,14 +28,20 @@
     <h1>Blog & Noticias SELECON</h1>
     <p>Actualidad técnica, consejos de mantenimiento y novedades Volvo Penta Industrial.</p>
 
-    <div id="lista-posts" style="margin-top: 1.5rem;"></div>
+    <div id="lista-posts" style="margin-top: 1.5rem;">Cargando artículos...</div>
   </main>
 
   <script>
     fetch('posts.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se pudo cargar el archivo posts.json (Error ' + response.status + ')');
+        }
+        return response.json();
+      })
       .then(posts => {
         const contenedor = document.getElementById('lista-posts');
+        contenedor.innerHTML = ''; // Limpiar mensaje de carga
         posts.forEach(post => {
           contenedor.innerHTML += `
             <article class="panel" style="margin-bottom: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
@@ -46,6 +52,10 @@
             </article>
           `;
         });
+      })
+      .catch(error => {
+        document.getElementById('lista-posts').innerHTML = '<p style="color: red; font-weight: bold;">Error al cargar las noticias: ' + error.message + '</p>';
+        console.error('Error:', error);
       });
   </script>
 
