@@ -3,60 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VODIA & Diagnóstico - SELECON Volvo Penta</title>
+  <title>Servicio VODIA y Diagnóstico Volvo Penta | SELECON</title>
+  <meta name="description" content="Diagnosis electrónica avanzada con sistema oficial VODIA para motores industriales Volvo Penta en Sevilla y Andalucía. Localización rápida de averías.">
+  <link rel="canonical" href="https://volvopentaindustriales-ctrl.github.io/Selecon_VolvoPenta/vodia.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Al compartir el enlace (WhatsApp, redes) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Servicio VODIA y Diagnóstico Volvo Penta | SELECON">
+  <meta property="og:description" content="Diagnosis electrónica avanzada con sistema oficial VODIA para motores industriales Volvo Penta en Sevilla y Andalucía.">
+  <meta property="og:url" content="https://volvopentaindustriales-ctrl.github.io/Selecon_VolvoPenta/vodia.html">
+
+  <!-- Estilos de toda la web -->
+  <link rel="stylesheet" href="estilos.css">
+
   <style>
-    :root { --primary: #002B49; --accent: #D71920; --bg: #F8FAFC; --text: #1E293B; }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-
-    header { background: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
-    nav a.active { color: #38BDF8; font-weight: bold; }
-
-    .container { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
     .hero-box { background: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 2rem; }
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
     .card { background: white; border-radius: 12px; padding: 1.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
     .alert-box { background: #E0F2FE; border-left: 4px solid #0284C7; padding: 1.5rem; border-radius: 6px; margin-top: 2rem; }
-
-    footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
   </style>
 </head>
 <body>
 
+  <header class="site-header">
+    <div class="container header-inner" id="menu-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <!-- El menú se cargará aquí automáticamente -->
+    </div>
+  </header>
 
+  <!-- Script que carga el menú desde menu.html -->
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+      });
+  </script>
 
-<header class="site-header">
-  <div class="container header-inner" id="menu-container">
-    <!-- El menú se cargará aquí automáticamente -->
-  </div>
-</header>
-
-<!-- Script que busca el menú y lo pinta -->
-<script>
-  fetch('menu.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('menu-container').innerHTML = data;
-    });
-</script>
-
-  
-
-  <main class="container">
+  <main class="container stack" style="max-width: 1000px; margin: 3rem auto; padding: 0 1rem;">
     <div class="hero-box">
-      <h1 style="color: var(--primary); margin-bottom: 1rem;">Diagnóstico Electrónico VODIA</h1>
+      <h1 style="color: var(--color-primary, #002B49); margin-bottom: 1rem;">Diagnóstico Electrónico VODIA</h1>
       <p>Utilizamos el sistema oficial <strong>VODIA (Volvo Penta Diagnostic Tool)</strong> para la comprobación, lectura de códigos de error y parametrización de unidades de control (ECU).</p>
     </div>
 
     <div class="grid-2">
       <div class="card">
-        <h3 style="color: var(--primary);">Pruebas en Tiempo Real</h3>
+        <h3 style="color: var(--color-primary, #002B49);">Pruebas en Tiempo Real</h3>
         <p>Análisis del rendimiento de sensores, inyectores y presiones de trabajo según especificaciones de fábrica.</p>
       </div>
 
       <div class="card">
-        <h3 style="color: var(--primary);">Documentación Técnica</h3>
+        <h3 style="color: var(--color-primary, #002B49);">Documentación Técnica</h3>
         <p>Soporte basado en la documentación y esquemas eléctricos actualizados por la red Volvo Penta.</p>
       </div>
     </div>
@@ -71,8 +69,10 @@
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 SELECON - Volvo Penta Industrial Sevilla. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
 </body>
