@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagnóstico Blog | SELECON</title>
+  <title>Blog y Noticias | SELECON Volvo Penta</title>
   <link rel="stylesheet" href="../estilos.css">
 </head>
 <body>
@@ -25,75 +25,29 @@
   </script>
 
   <main class="container stack" style="margin-top: 2rem;">
-    <h1>Diagnóstico del Blog</h1>
-    <div id="debug-info" style="background: #f1f5f9; padding: 1rem; border-radius: 8px; font-family: monospace; margin-top: 1rem;">
-      <p><strong>Ubicación actual:</strong> <span id="current-url"></span></p>
-      <hr style="margin: 0.5rem 0;">
-      <p><strong>Resultados de búsqueda de posts.json:</strong></p>
-      <ul id="log-list" style="margin-left: 1.2rem;"></ul>
-    </div>
+    <h1>Blog & Noticias SELECON</h1>
+    <p>Actualidad técnica, consejos de mantenimiento y novedades Volvo Penta Industrial.</p>
 
-    <div id="lista-posts" style="margin-top: 1.5rem;"></div>
+    <div id="lista-posts" style="margin-top: 1.5rem;">Cargando artículos...</div>
   </main>
 
   <script>
-    document.getElementById('current-url').innerText = window.location.href;
-    const logList = document.getElementById('log-list');
-
-    function addLog(msg, isSuccess = false) {
-      const li = document.createElement('li');
-      li.style.color = isSuccess ? 'green' : 'red';
-      li.innerText = msg;
-      logList.appendChild(li);
-    }
-
-    // Rutas a comprobar
-    const rutas = [
-      'posts.json',
-      './posts.json',
-      '../blog/posts.json',
-      '/Selecon_VolvoPenta/blog/posts.json'
-    ];
-
-    async function probarRutas() {
-      let cargado = false;
-      for (const ruta of rutas) {
-        try {
-          const res = await fetch(ruta);
-          if (res.ok) {
-            addLog(`✔ ÉXITO con la ruta: "${ruta}" (Status 200)`, true);
-            const posts = await res.json();
-            mostrarPosts(posts);
-            cargado = true;
-            break;
-          } else {
-            addLog(`✖ Fallo en ruta: "${ruta}" (Status ${res.status})`);
-          }
-        } catch (err) {
-          addLog(`✖ Error al consultar: "${ruta}" (${err.message})`);
-        }
-      }
-      if (!cargado) {
-        addLog('❌ Ninguna de las rutas pudo encontrar el archivo posts.json.');
-      }
-    }
-
-    function mostrarPosts(posts) {
-      const contenedor = document.getElementById('lista-posts');
-      contenedor.innerHTML = '';
-      posts.forEach(post => {
-        contenedor.innerHTML += `
-          <article class="panel" style="margin-bottom: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <h2 style="margin-bottom: 0.5rem;"><a href="articulo.html?id=${post.id}" style="color: var(--color-primary, #002B49); text-decoration: none;">${post.titulo}</a></h2>
-            <p style="font-size: 0.9rem; color: #666;"><em>Publicado el ${post.fecha} por ${post.autor}</em></p>
-            <p style="margin-top: 0.8rem;">${post.extracto}</p>
-            <a href="articulo.html?id=${post.id}" class="btn" style="margin-top: 1rem; display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary, #002B49); color: #fff; text-decoration: none; border-radius: 4px;">Leer artículo completo &rarr;</a>
-          </article>
-        `;
+    fetch('posts.json')
+      .then(response => response.json())
+      .then(posts => {
+        const contenedor = document.getElementById('lista-posts');
+        contenedor.innerHTML = '';
+        posts.forEach(post => {
+          contenedor.innerHTML += `
+            <article class="panel" style="margin-bottom: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <h2 style="margin-bottom: 0.5rem;"><a href="articulo.html?id=${post.id}" style="color: var(--color-primary, #002B49); text-decoration: none;">${post.titulo}</a></h2>
+              <p style="font-size: 0.9rem; color: #666;"><em>Publicado el ${post.fecha} por ${post.autor}</em></p>
+              <p style="margin-top: 0.8rem;">${post.extracto}</p>
+              <a href="articulo.html?id=${post.id}" class="btn" style="margin-top: 1rem; display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary, #002B49); color: #fff; text-decoration: none; border-radius: 4px;">Leer artículo completo &rarr;</a>
+            </article>
+          `;
+        });
       });
-    }
-
-    probarRutas();
   </script>
 
   <footer class="site-footer" style="margin-top: 3rem;">
