@@ -1,6 +1,17 @@
 
 [
   {
+  "id": "cuidar-motor-diesel-industrial",
+  "titulo": "Medidas sencillas para sacar el máximo partido a su motor diésel industrial",
+  "fecha": "4 de Noviembre de 2026",
+  "fechaISO": "2026-11-04",
+  "autor": "Servicio Técnico SELECON",
+  "extracto": "Pequeños gestos de cuidado y un mantenimiento adecuado mejoran la fiabilidad de un motor diésel industrial y reducen paradas imprevistas.",
+  "contenido": "<p>Según destaca Volvo Penta, cuidar un motor diésel industrial con medidas sencillas mejora su fiabilidad. En <strong>SELECON</strong> lo vemos a diario: muchas averías se pueden evitar con buenos hábitos de mantenimiento.</p><h2>Hábitos que marcan la diferencia</h2><ul><li><strong>Seguir el plan de mantenimiento:</strong> respetar los intervalos de revisión según las horas de funcionamiento.</li><li><strong>Usar recambios y lubricantes originales:</strong> garantizan que cada componente trabaja como fue diseñado.</li><li><strong>Vigilar el combustible:</strong> un combustible limpio y bien almacenado protege el sistema de inyección.</li><li><strong>Cuidar el sistema de postratamiento:</strong> es una pieza clave en los motores actuales y conviene que lo revise un técnico.</li><li><strong>Atender los avisos del motor:</strong> una alarma o un cambio en el rendimiento es el momento de actuar, no de esperar.</li></ul><h2>Detectar a tiempo con diagnosis electrónica</h2><p>Con el sistema de diagnosis <strong>VODIA</strong> podemos leer la información de la unidad electrónica del motor y localizar incidencias antes de que se conviertan en una parada.</p><h2>Más información</h2><p>Puedes leer la noticia original en la <a href=\"https://www.volvopenta.com/about-us/news-page/2021/oct/simple-measures-to-get-the-most-out-of-your-diesel-engine/\" target=\"_blank\" rel=\"noopener\">web de Volvo Penta</a> (en inglés).</p><p>¿Quiere revisar su instalación? <a href=\"../contacto.html\">Solicite servicio técnico</a>.</p>"
+},
+
+  
+  {
     "id": "electromovilidad-industrial-volvo-penta",
     "titulo": "Soluciones de Electromovilidad Industrial Volvo Penta: El futuro de la propulsión sostenible",
     "fecha": "4 de Noviembre de 2026",
